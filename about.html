@@ -1,185 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us | Active Facade System – Navi Mumbai</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <meta name="description" content="Learn about Active Facade System — Navi Mumbai's specialist in facade access, glass cleaning, BMU maintenance, and restoration services."/>
+  <link rel="icon" href="images/logo.png" type="image/png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
-    /* ===== ABOUT STORY ===== */
-    .story-section { background: white; }
-    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-    .story-text p { color: var(--muted); font-size: 1rem; line-height: 1.85; margin-bottom: 18px; }
-    .story-image {
-      border-radius: 16px; overflow: hidden; height: 440px; position: relative;
-      background: linear-gradient(135deg, var(--navy), var(--steel));
-      display: flex; align-items: center; justify-content: center; font-size: 5rem;
-    }
-    .story-image img { width: 100%; height: 100%; object-fit: cover; }
-    .story-image-badge {
-      position: absolute; bottom: 20px; left: 20px;
-      background: var(--red); color: white; padding: 12px 18px; border-radius: 8px;
-      font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 0.06em; box-shadow: 0 4px 16px rgba(192,39,45,0.4);
+    :root {
+      --navy: #0a1628;
+      --blue: #1a3a6b;
+      --accent: #e8a020;
+      --light: #f4f6fa;
+      --white: #ffffff;
+      --gray: #6b7280;
+      --border: #dde2ec;
+      --text: #1e2535;
     }
 
-    /* ===== VALUES ===== */
-    .values-section { background: var(--light); }
-    .values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
-    .val-card {
-      background: white; border-radius: var(--radius); padding: 36px 28px;
-      text-align: center; border: 1px solid var(--border); transition: all 0.28s;
-    }
-    .val-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--red); }
-    .val-icon-wrap {
-      width: 72px; height: 72px; background: var(--light); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2rem; margin: 0 auto 18px; transition: background 0.28s;
-    }
-    .val-card:hover .val-icon-wrap { background: #fff0f0; }
-    .val-card h3 { font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 600; text-transform: uppercase; color: var(--navy); margin-bottom: 10px; }
-    .val-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.7; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text); line-height: 1.6; }
 
-    /* ===== FACTORY ===== */
-    .factory-section { background: white; }
-    .factory-intro { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 700px; margin: 0 auto 48px; text-align: center; }
-    .factory-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
-    .fac-cell {
-      aspect-ratio: 1; border-radius: 8px; overflow: hidden;
-      background: var(--light); position: relative; cursor: pointer;
-    }
-    .fac-cell img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-    .fac-cell:hover img { transform: scale(1.08); }
-    .fac-cell-placeholder {
-      width: 100%; height: 100%; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 8px;
-      color: #b0bec8; font-size: 0.78rem; text-align: center; padding: 8px;
-    }
-    .fac-cell-placeholder span { font-size: 2rem; }
-    .fac-overlay {
-      position: absolute; inset: 0; background: rgba(15,32,68,0.55);
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; transition: opacity 0.25s;
-    }
-    .fac-cell:hover .fac-overlay { opacity: 1; }
-    .fac-overlay p { color: white; font-size: 0.78rem; font-weight: 600; text-align: center; padding: 8px; }
+    /* TOP BAR */
+    .topbar { background: var(--navy); color: #aab4c8; font-size: 0.78rem; padding: 8px 0; }
+    .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+    .topbar a { color: #aab4c8; text-decoration: none; }
+    .topbar a:hover { color: var(--accent); }
 
-    /* ===== LOCATION ===== */
-    .location-section { background: var(--navy); padding: 80px 24px; }
-    .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 48px; }
-    .location-section .section-title { color: white; }
-    .location-section .section-title span { color: var(--red); }
-    .location-section .section-eyebrow { color: #ff8a8f; }
-    .location-section .section-eyebrow::before { background: var(--red); }
-    .linfo-card {
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px; padding: 32px;
-    }
-    .lrow { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 24px; }
-    .lrow:last-child { margin-bottom: 0; }
-    .lrow-icon {
-      width: 44px; height: 44px; background: var(--red); border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; flex-shrink: 0;
-    }
-    .lrow-label { font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6a8aa5; margin-bottom: 4px; }
-    .lrow-val { color: white; font-size: 0.95rem; line-height: 1.65; }
-    .lrow-val a { color: white; transition: color 0.2s; }
-    .lrow-val a:hover { color: var(--red); }
-    .map-card {
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px; padding: 32px; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; min-height: 280px; text-align: center;
-    }
-    .map-icon { font-size: 4rem; margin-bottom: 16px; }
-    .map-card h4 { color: white; font-family: 'Oswald', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 8px; }
-    .map-card p { color: #6a8aa5; font-size: 0.9rem; line-height: 1.7; }
+    /* NAV */
+    nav { background: var(--white); border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo img { height: 44px; }
+    .nav-links { display: flex; gap: 8px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.9rem; font-weight: 500; padding: 8px 14px; border-radius: 6px; transition: all 0.2s; }
+    .nav-links a:hover, .nav-links a.active { background: var(--light); color: var(--blue); }
+    .nav-cta { background: var(--accent); color: var(--navy) !important; font-weight: 600 !important; padding: 9px 18px !important; }
+    .nav-cta:hover { background: #d4911a !important; color: var(--white) !important; }
 
+    /* BREADCRUMB */
+    .breadcrumb { background: var(--light); padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; color: var(--gray); }
+    .breadcrumb-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .breadcrumb a { color: var(--blue); text-decoration: none; }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, #1e4d8c 100%);
+      color: var(--white); padding: 64px 24px 56px; text-align: center; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .page-hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; position: relative; }
+    .page-hero p { font-size: 1.05rem; color: #b8c8e0; max-width: 640px; margin: 0 auto; position: relative; }
+
+    /* CONTAINER */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* SECTION LABEL */
+    .section-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 10px; }
+
+    /* WHO WE ARE */
+    .about-section { padding: 80px 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-text h2 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; text-transform: uppercase; color: var(--navy); line-height: 1.1; margin-bottom: 20px; }
+    .about-text p { color: var(--gray); margin-bottom: 16px; font-size: 0.97rem; line-height: 1.75; }
+    .about-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.88rem; font-weight: 600; padding: 12px 22px; border-radius: 8px; transition: all 0.2s; }
+    .btn-primary { background: var(--blue); color: var(--white); }
+    .btn-primary:hover { background: var(--navy); transform: translateY(-1px); }
+    .btn-outline { border: 2px solid var(--border); color: var(--text); background: transparent; }
+    .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+    .about-img { border-radius: 12px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.12); position: relative; }
+    .about-img img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .about-img-badge { position: absolute; bottom: 20px; left: 20px; background: rgba(10,22,40,0.9); color: var(--white); font-size: 0.8rem; font-weight: 600; padding: 8px 16px; border-radius: 30px; backdrop-filter: blur(4px); }
+
+    /* CORE VALUES */
+    .values-section { background: var(--light); padding: 80px 0; }
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .section-header h2 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; text-transform: uppercase; color: var(--navy); }
+    .section-header p { color: var(--gray); margin-top: 10px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .value-card { background: var(--white); border-radius: 12px; padding: 32px 28px; border: 1px solid var(--border); transition: all 0.2s; }
+    .value-card:hover { border-color: var(--accent); box-shadow: 0 8px 24px rgba(232,160,32,0.12); transform: translateY(-3px); }
+    .value-icon { font-size: 2rem; margin-bottom: 14px; }
+    .value-card h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; color: var(--navy); margin-bottom: 10px; }
+    .value-card p { color: var(--gray); font-size: 0.9rem; line-height: 1.65; }
+
+    /* FACTORY SECTION */
+    .factory-section { padding: 80px 0; }
+    .factory-intro { max-width: 700px; margin: 0 auto 48px; text-align: center; }
+    .factory-intro p { color: var(--gray); font-size: 0.97rem; line-height: 1.75; }
+
+    .factory-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .factory-item {
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+      background: var(--navy);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .factory-item:hover { transform: scale(1.02); box-shadow: 0 8px 28px rgba(0,0,0,0.18); }
+    .factory-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.3s; }
+    .factory-item:hover img { opacity: 0.85; }
+    .factory-item .caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(10,22,40,0.85));
+      color: var(--white); font-size: 0.78rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      padding: 20px 12px 10px;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .factory-item:hover .caption { opacity: 1; }
+
+    /* LOCATION */
+    .location-section { background: var(--light); padding: 80px 0; }
+    .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .location-info h2 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; text-transform: uppercase; color: var(--navy); margin-bottom: 28px; }
+    .contact-items { display: flex; flex-direction: column; gap: 20px; margin-bottom: 28px; }
+    .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+    .contact-icon { width: 44px; height: 44px; background: var(--navy); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .contact-item h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); margin-bottom: 4px; }
+    .contact-item p, .contact-item a { font-size: 0.92rem; color: var(--text); text-decoration: none; line-height: 1.5; }
+    .contact-item a:hover { color: var(--blue); }
+
+    .map-card { background: var(--white); border-radius: 12px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .map-placeholder { background: linear-gradient(135deg, var(--navy), var(--blue)); height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--white); gap: 12px; }
+    .map-placeholder .map-icon { font-size: 2.5rem; }
+    .map-placeholder h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 700; text-transform: uppercase; }
+    .map-placeholder p { font-size: 0.82rem; color: #b8c8e0; text-align: center; padding: 0 20px; }
+    .map-body { padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .map-address { font-size: 0.85rem; color: var(--gray); line-height: 1.5; }
+    .map-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--accent); color: var(--navy); text-decoration: none; font-size: 0.82rem; font-weight: 700; padding: 10px 18px; border-radius: 8px; white-space: nowrap; transition: all 0.2s; flex-shrink: 0; }
+    .map-btn:hover { background: #d4911a; color: var(--white); }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: #8a9ab8; padding: 48px 0 0; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px 40px; display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; }
+    .footer-brand img { height: 40px; margin-bottom: 12px; filter: brightness(0) invert(1); opacity: 0.8; }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.6; }
+    footer h4 { color: var(--white); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    footer ul { list-style: none; }
+    footer ul li { margin-bottom: 8px; }
+    footer ul li a { color: #8a9ab8; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    footer ul li a:hover { color: var(--accent); }
+    .footer-contact p { font-size: 0.85rem; margin-bottom: 8px; }
+    .footer-contact a { color: #8a9ab8; text-decoration: none; }
+    .footer-contact a:hover { color: var(--accent); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 16px 24px; text-align: center; font-size: 0.78rem; max-width: 1200px; margin: 0 auto; }
+
+    /* FLOAT BUTTONS */
+    .float-btns { position: fixed; bottom: 24px; right: 24px; display: flex; flex-direction: column; gap: 10px; z-index: 200; }
+    .float-btn { display: flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 50px; text-decoration: none; font-size: 0.85rem; font-weight: 600; box-shadow: 0 4px 16px rgba(0,0,0,0.2); transition: transform 0.2s; }
+    .float-btn:hover { transform: scale(1.05); }
+    .float-call { background: var(--blue); color: var(--white); }
+    .float-wa { background: #25d366; color: var(--white); }
+    .scroll-top { position: fixed; bottom: 24px; left: 24px; width: 40px; height: 40px; background: var(--navy); color: var(--white); border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: background 0.2s; }
+    .scroll-top:hover { background: var(--blue); }
+
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-      .story-grid, .location-grid { grid-template-columns: 1fr; }
+      .about-grid, .location-grid { grid-template-columns: 1fr; }
       .values-grid { grid-template-columns: 1fr 1fr; }
-      .factory-grid { grid-template-columns: repeat(3,1fr); }
+      .factory-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 600px) {
+    @media (max-width: 540px) {
       .values-grid { grid-template-columns: 1fr; }
-      .factory-grid { grid-template-columns: repeat(2,1fr); }
+      .factory-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
 <body>
 
+<!-- TOP BAR -->
 <div class="topbar">
-  <a href="tel:8369803028">📞 8369 803 028 / 9591742073</a>
-  <a href="mailto:activefacadesales@gmail.com">✉️ activefacadesales@gmail.com</a>
-  <a href="#location">📍 Kharghar, Navi Mumbai</a>
+  <div class="topbar-inner">
+    <div>
+      <a href="tel:8369803028">📞 8369 803 028</a> &nbsp;/&nbsp;
+      <a href="tel:9591742073">9591742073</a>
+    </div>
+    <div>
+      <a href="mailto:activefacadesales@gmail.com">✉️ activefacadesales@gmail.com</a>
+      &nbsp;&nbsp;
+      <a href="#location">📍 Kharghar, Navi Mumbai</a>
+    </div>
+  </div>
 </div>
 
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="AFS"/></a>
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Active Facade System"/></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About Us</a></li>
       <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html" class="nav-cta-btn">Get a Quote</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
     </ul>
-    <div class="hamburger"><span></span><span></span><span></span></div>
   </div>
 </nav>
 
-<div class="page-header">
-  <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span>About Us</span></div>
-  <h1>About <span>Active Facade System</span></h1>
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a> › About Us
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <h1>About Active Facade System</h1>
   <p>Specialized facade solutions from Navi Mumbai, built on safety and expertise</p>
 </div>
 
-<!-- STORY -->
-<section class="story-section">
+
+<!-- WHO WE ARE -->
+<section class="about-section">
   <div class="container">
-    <div class="story-grid">
-      <div class="story-text">
-        <div class="section-eyebrow reveal">Our Story</div>
-        <h2 class="section-title reveal">Who We <span>Are</span></h2>
-        <div style="width:48px;height:3px;background:var(--red);margin:14px 0 24px;" class="reveal"></div>
-        <p class="reveal">Active Façade Systems is a specialized service provider in the field of façade access and maintenance solutions. Based in Navi Mumbai, we are committed to delivering high-quality, reliable, and safe façade services for modern buildings and structures.</p>
-        <p class="reveal reveal-delay-1">With a strong focus on precision and workmanship, we offer a complete range of façade-related services — including façade access systems, glass cleaning, glass fitting, and silicone pasting. Our expertise ensures building exteriors are visually appealing, structurally sound, and well-maintained.</p>
-        <p class="reveal reveal-delay-2">Our operations are supported by a well-organized factory process, allowing us to maintain strict quality control and deliver consistent results. We combine technical knowledge with practical experience to meet the evolving demands of the construction and maintenance industry.</p>
-        <div class="reveal reveal-delay-3" style="margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;">
-          <a href="services.html" class="btn btn-primary">Our Services <span class="arrow">→</span></a>
-          <a href="contact.html" class="btn btn-outline-red">Contact Us</a>
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label">Our Story</div>
+        <h2>Who We Are</h2>
+        <p>Active Façade Systems is a specialized service provider in the field of façade access and maintenance solutions. Based in Navi Mumbai, we are committed to delivering high-quality, reliable, and safe façade services for modern buildings and structures.</p>
+        <p>With a strong focus on precision and workmanship, we offer a complete range of façade-related services — including façade access systems, glass cleaning, glass fitting, and silicone pasting. Our expertise ensures building exteriors are visually appealing, structurally sound, and well-maintained.</p>
+        <p>Our operations are supported by a well-organized factory process, allowing us to maintain strict quality control and deliver consistent results. We combine technical knowledge with practical experience to meet the evolving demands of the construction and maintenance industry.</p>
+        <div class="about-btns">
+          <a href="services.html" class="btn btn-primary">Our Services →</a>
+          <a href="contact.html" class="btn btn-outline">Contact Us</a>
         </div>
       </div>
-      <div class="reveal reveal-delay-2">
-        <div class="story-image">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80" loading="lazy" alt="AFS team at work" onerror="this.parentElement.innerHTML='🏗️'"/>
-          <div class="story-image-badge">📍 Navi Mumbai, Maharashtra</div>
-        </div>
+      <div class="about-img">
+        <img src="https://vishu1196.github.io/static/spiderman_service.jpeg" alt="AFS team at work" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80'"/>
+        <div class="about-img-badge">📍 Navi Mumbai, Maharashtra</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VALUES -->
+
+<!-- CORE VALUES -->
 <section class="values-section">
   <div class="container">
-    <div class="text-center reveal">
-      <div class="section-eyebrow">What Drives Us</div>
-      <h2 class="section-title">Our Core <span>Values</span></h2>
-      <p class="section-sub">Everything we do is guided by three pillars that define how we work and why clients trust us.</p>
+    <div class="section-header">
+      <div class="section-label">What Drives Us</div>
+      <h2>Our Core Values</h2>
+      <p>Everything we do is guided by three pillars that define how we work and why clients trust us.</p>
     </div>
     <div class="values-grid">
-      <div class="val-card reveal reveal-delay-1">
-        <div class="val-icon-wrap">🛡️</div>
+      <div class="value-card">
+        <div class="value-icon">🛡️</div>
         <h3>Safety First</h3>
         <p>Every single operation uses certified equipment, trained personnel, and strict compliance with at-height working standards. No shortcuts, ever.</p>
       </div>
-      <div class="val-card reveal reveal-delay-2">
-        <div class="val-icon-wrap">⭐</div>
+      <div class="value-card">
+        <div class="value-icon">⭐</div>
         <h3>Quality Work</h3>
         <p>We use imported kits from UK and France, Kermantle ropes, and factory-controlled manufacturing to deliver consistently excellent results.</p>
       </div>
-      <div class="val-card reveal reveal-delay-3">
-        <div class="val-icon-wrap">🤝</div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
         <h3>Client First</h3>
         <p>From free site surveys to emergency call-outs, our entire operation is structured around making things easy and reliable for every client we serve.</p>
       </div>
@@ -187,92 +277,156 @@
   </div>
 </section>
 
-<!-- FACTORY -->
+
+<!-- WORK IN FACTORY -->
 <section class="factory-section">
   <div class="container">
-    <div class="text-center reveal">
-      <div class="section-eyebrow">Manufacturing</div>
-      <h2 class="section-title">Work In <span>Factory</span></h2>
+    <div class="section-header">
+      <div class="section-label">Manufacturing</div>
+      <h2>Work In Factory</h2>
     </div>
-    <p class="factory-intro reveal">Our in-house factory allows us to manufacture and assemble BMU components, cradles, and davit arms with complete quality control — from raw steel to finished product, every step is supervised by our expert team.</p>
+    <div class="factory-intro">
+      <p>Our in-house factory allows us to manufacture and assemble BMU components, cradles, and davit arms with complete quality control — from raw steel to finished product, every step is supervised by our expert team.</p>
+    </div>
+
     <div class="factory-grid">
-      <div class="fac-cell reveal reveal-delay-1"><img src="https://images.unsplash.com/photo-1581091870627-5b15e7c10d87?w=400&q=75" loading="lazy" alt="" onerror="this.parentElement.innerHTML='<div class=\'fac-cell-placeholder\'><span>🔧</span><p>factory-1.jpg</p></div>'"/><div class="fac-overlay"><p>Factory Work</p></div></div>
-      <div class="fac-cell reveal reveal-delay-2"><img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=400&q=75" loading="lazy" alt="" onerror="this.parentElement.innerHTML='<div class=\'fac-cell-placeholder\'><span>🔧</span><p>factory-2.jpg</p></div>'"/><div class="fac-overlay"><p>Fabrication</p></div></div>
-      <div class="fac-cell reveal reveal-delay-3"><img src="https://images.unsplash.com/photo-1609803384069-19f3fd6b0a04?w=400&q=75" loading="lazy" alt="" onerror="this.parentElement.innerHTML='<div class=\'fac-cell-placeholder\'><span>⚙️</span><p>factory-3.jpg</p></div>'"/><div class="fac-overlay"><p>Assembly</p></div></div>
-      <div class="fac-cell reveal reveal-delay-4"><img src="https://images.unsplash.com/photo-1581091870621-f12e4aa2d6aa?w=400&q=75" loading="lazy" alt="" onerror="this.parentElement.innerHTML='<div class=\'fac-cell-placeholder\'><span>🏗️</span><p>factory-4.jpg</p></div>'"/><div class="fac-overlay"><p>Quality Check</p></div></div>
-      <div class="fac-cell reveal reveal-delay-1"><img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=400&q=75" loading="lazy" alt="" onerror="this.parentElement.innerHTML='<div class=\'fac-cell-placeholder\'><span>🔩</span><p>factory-5.jpg</p></div>'"/><div class="fac-overlay"><p>Component Work</p></div></div>
-      <div class="fac-cell reveal reveal-delay-2"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&q=75" loading="lazy" alt="" onerror="this.parentElement.innerHTML='<div class=\'fac-cell-placeholder\'><span>🔧</span><p>factory-6.jpg</p></div>'"/><div class="fac-overlay"><p>Welding</p></div></div>
-      <div class="fac-cell reveal reveal-delay-3"><img src="https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=400&q=75" loading="lazy" alt="" onerror="this.parentElement.innerHTML='<div class=\'fac-cell-placeholder\'><span>⚙️</span><p>factory-7.jpg</p></div>'"/><div class="fac-overlay"><p>Metal Work</p></div></div>
-      <div class="fac-cell reveal reveal-delay-4"><img src="https://images.unsplash.com/photo-1581092916357-7da75cc99d14?w=400&q=75" loading="lazy" alt="" onerror="this.parentElement.innerHTML='<div class=\'fac-cell-placeholder\'><span>🏭</span><p>factory-8.jpg</p></div>'"/><div class="fac-overlay"><p>Packaging</p></div></div>
+      <div class="factory-item">
+        <img src="https://vishu1196.github.io/static/WIF-1.jpg" alt="Factory Work 1"/>
+        <div class="caption">Factory Work</div>
+      </div>
+      <div class="factory-item">
+        <img src="https://vishu1196.github.io/static/WIF-2.jpg" alt="Factory Work 2"/>
+        <div class="caption">Fabrication</div>
+      </div>
+      <div class="factory-item">
+        <img src="https://vishu1196.github.io/static/WIF-3.jpg" alt="Factory Work 3"/>
+        <div class="caption">Assembly</div>
+      </div>
+      <div class="factory-item">
+        <img src="https://vishu1196.github.io/static/WIF-4.jpg" alt="Factory Work 4"/>
+        <div class="caption">Quality Check</div>
+      </div>
+      <div class="factory-item">
+        <img src="https://vishu1196.github.io/static/WIF-5.jpg" alt="Factory Work 5"/>
+        <div class="caption">Component Work</div>
+      </div>
+      <div class="factory-item">
+        <img src="https://vishu1196.github.io/static/WIF-6.jpg" alt="Factory Work 6"/>
+        <div class="caption">Welding</div>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- LOCATION -->
 <section class="location-section" id="location">
   <div class="container">
-    <div class="section-eyebrow reveal">Find Us</div>
-    <h2 class="section-title reveal">Our <span>Location</span></h2>
+    <div class="section-header">
+      <div class="section-label">Find Us</div>
+      <h2>Our Location</h2>
+    </div>
     <div class="location-grid">
-      <div class="linfo-card reveal reveal-delay-1">
-        <div class="lrow">
-          <div class="lrow-icon">📍</div>
-          <div>
-            <div class="lrow-label">Address</div>
-            <div class="lrow-val">Shop No.4, Sushma Apartment,<br/>Plot No. E 88, Sector-3, Kharghar,<br/>Navi Mumbai – 410 210</div>
+      <div class="location-info">
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Address</h4>
+              <p>Shop No.4, Sushma Apartment,<br/>Plot No. E 88, Sector-3, Kharghar,<br/>Navi Mumbai – 410 210</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <a href="tel:8369803028">8369 803 028</a> &nbsp;/&nbsp; <a href="tel:9591742073">9591742073</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:activefacadesales@gmail.com">activefacadesales@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <h4>Working Hours</h4>
+              <p>Monday – Saturday: 9:00 AM – 6:00 PM</p>
+            </div>
           </div>
         </div>
-        <div class="lrow">
-          <div class="lrow-icon">📞</div>
-          <div>
-            <div class="lrow-label">Phone</div>
-            <div class="lrow-val"><a href="tel:8369803028">8369 803 028</a> / <a href="tel:9591742073">9591742073</a></div>
-          </div>
+        <a href="contact.html" class="btn btn-primary">Send Us a Message →</a>
+      </div>
+
+      <div class="map-card">
+        <div class="map-placeholder">
+          <div class="map-icon">🗺️</div>
+          <h3>Kharghar, Navi Mumbai</h3>
+          <p>Sector-3, Kharghar · Maharashtra 410 210<br/>Conveniently located to serve all of Mumbai and Navi Mumbai</p>
         </div>
-        <div class="lrow">
-          <div class="lrow-icon">✉️</div>
-          <div>
-            <div class="lrow-label">Email</div>
-            <div class="lrow-val"><a href="mailto:activefacadesales@gmail.com">activefacadesales@gmail.com</a></div>
+        <div class="map-body">
+          <div class="map-address">
+            Shop No.4, Sushma Apartment,<br/>
+            Plot E 88, Sector-3, Kharghar,<br/>
+            Navi Mumbai – 410 210
           </div>
-        </div>
-        <div class="lrow">
-          <div class="lrow-icon">🕐</div>
-          <div>
-            <div class="lrow-label">Working Hours</div>
-            <div class="lrow-val">Monday – Saturday: 9:00 AM – 6:00 PM</div>
-          </div>
-        </div>
-        <div style="margin-top:24px;">
-          <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;">Send Us a Message →</a>
+          <a href="https://www.google.com/maps?q=19.0285175,73.0586058" target="_blank" class="map-btn">
+            Open in Maps →
+          </a>
         </div>
       </div>
-      <div class="map-card reveal reveal-delay-2">
-        <div class="map-icon">🗺️</div>
-        <h4>Kharghar, Navi Mumbai</h4>
-        <p>Sector-3, Kharghar<br/>Maharashtra 410 210<br/><br/>Conveniently located to serve<br/>all of Mumbai and Navi Mumbai</p>
-        <a href="https://www.google.com/maps?q=19.0285175,73.0586058" target="_blank">Open in Maps →</a>      </div>
     </div>
   </div>
 </section>
 
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand"><img src="images/logo.png" alt="AFS"/><p>Active Facade System — specialized facade access and maintenance solutions, Navi Mumbai.</p></div>
-      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#facade-cleaning">Facade Cleaning</a></li><li><a href="services.html#spiderman">Spiderman Service</a></li><li><a href="services.html#access-solutions">Access Solutions</a></li><li><a href="services.html#restoration">Restoration</a></li><li><a href="services.html#maintenance">Maintenance</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><div class="fci"><span class="ico">📞</span><p><a href="tel:8369803028">8369 803 028</a></p></div><div class="fci"><span class="ico">✉️</span><p><a href="mailto:activefacadesales@gmail.com">activefacadesales@gmail.com</a></p></div><div class="fci"><span class="ico">📍</span><p>Kharghar, Navi Mumbai – 410 210</p></div></div>
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="AFS"/>
+      <p>Active Facade System — specialized facade access and maintenance solutions, Navi Mumbai.</p>
     </div>
-    <div class="footer-bottom"><span>© 2025 Active Facade System. All rights reserved.</span><span>Made with ❤️ in Navi Mumbai</span></div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html#facade-cleaning">Facade Cleaning</a></li>
+        <li><a href="services.html#spiderman">Spiderman Service</a></li>
+        <li><a href="services.html#access-solutions">Access Solutions</a></li>
+        <li><a href="services.html#restoration">Restoration</a></li>
+        <li><a href="services.html#maintenance">Maintenance</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>📞 <a href="tel:8369803028">8369 803 028</a></p>
+      <p>✉️ <a href="mailto:activefacadesales@gmail.com">activefacadesales@gmail.com</a></p>
+      <p>📍 Kharghar, Navi Mumbai – 410 210</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Active Facade System. All rights reserved. Made with ❤️ in Navi Mumbai
   </div>
 </footer>
 
-<div class="float-cta">
-  <a href="tel:8369803028" class="float-btn call"><span class="ficon">📞</span><span class="float-label">Call Now</span></a>
-  <a href="https://wa.me/918369803028" class="float-btn whatsapp" target="_blank"><span class="ficon">💬</span><span class="float-label">WhatsApp</span></a>
+<!-- FLOAT BUTTONS -->
+<div class="float-btns">
+  <a href="tel:8369803028" class="float-btn float-call">📞 Call Now</a>
+  <a href="https://wa.me/918369803028" class="float-btn float-wa" target="_blank">💬 WhatsApp</a>
 </div>
-<button id="backToTop" title="Back to top">↑</button>
-<script src="js/main.js"></script>
+<a href="#" class="scroll-top">↑</a>
+
 </body>
 </html>

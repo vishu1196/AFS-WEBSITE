@@ -1,548 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Services | Active Facade System – Navi Mumbai</title>
-  <meta name="description" content="Comprehensive facade solutions — BMU systems, rope access, cleaning, restoration, maintenance and safety management for high-rise buildings in Mumbai."/>
-  <link rel="icon" href="images/logo.png" type="image/png"/>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <title>Services | Active Facade System</title>
+  <link rel="stylesheet" href="css/style.css"/>
   <style>
-    :root {
-      --navy: #0a1628;
-      --blue: #1a3a6b;
-      --accent: #e8a020;
-      --accent2: #c0392b;
-      --light: #f4f6fa;
-      --white: #ffffff;
-      --gray: #6b7280;
-      --border: #dde2ec;
-      --text: #1e2535;
+    /* ===== SERVICE NAV TABS ===== */
+    .srv-tabs-wrap { background: white; position: sticky; top: 70px; z-index: 900; border-bottom: 2px solid var(--border); }
+    .srv-tabs {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; overflow-x: auto; gap: 0;
     }
+    .srv-tabs::-webkit-scrollbar { height: 0; }
+    .srv-tab {
+      padding: 16px 20px; white-space: nowrap;
+      font-size: 0.88rem; font-weight: 600; color: var(--muted);
+      border-bottom: 3px solid transparent; margin-bottom: -2px;
+      transition: all 0.22s; cursor: pointer; text-decoration: none; display: block;
+    }
+    .srv-tab:hover { color: var(--navy); }
+    .srv-tab.active { color: var(--red); border-bottom-color: var(--red); }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* ===== SERVICE BLOCKS ===== */
+    .service-block { padding: 80px 24px; }
+    .service-block:nth-child(odd) { background: white; }
+    .service-block:nth-child(even) { background: var(--light); }
 
-    html { scroll-behavior: smooth; }
+    .sblock-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .sblock-inner.flip { direction: rtl; }
+    .sblock-inner.flip > * { direction: ltr; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--white);
-      color: var(--text);
-      line-height: 1.6;
+    .sblock-num {
+      font-family: 'Oswald', sans-serif; font-size: 5rem; font-weight: 700;
+      color: var(--border); line-height: 1; margin-bottom: -12px; display: block;
     }
+    .sblock-text h2 { font-family: 'Oswald', sans-serif; font-size: clamp(2rem,4vw,2.8rem); font-weight: 700; text-transform: uppercase; color: var(--navy); line-height: 1.05; }
+    .sblock-text h2 span { color: var(--red); }
+    .sblock-divider { width: 48px; height: 3px; background: var(--red); margin: 14px 0 20px; border-radius: 2px; }
+    .sblock-text p { color: var(--muted); line-height: 1.82; font-size: 1rem; margin-bottom: 14px; }
 
-    /* ── TOP BAR ── */
-    .topbar {
-      background: var(--navy);
-      color: #aab4c8;
-      font-size: 0.78rem;
-      padding: 8px 0;
+    /* Feature List */
+    .feat-list { list-style: none; margin: 20px 0 28px; }
+    .feat-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; color: var(--text);
     }
-    .topbar-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .topbar a { color: #aab4c8; text-decoration: none; }
-    .topbar a:hover { color: var(--accent); }
+    .feat-list li:last-child { border-bottom: none; }
+    .feat-check { color: var(--red); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
-    /* ── NAV ── */
-    nav {
-      background: var(--white);
-      border-bottom: 2px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    }
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-    }
-    .nav-logo img { height: 44px; }
-    .nav-links { display: flex; gap: 8px; list-style: none; }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text);
-      font-size: 0.9rem;
-      font-weight: 500;
-      padding: 8px 14px;
-      border-radius: 6px;
+    /* Methods Pills */
+    .method-tags { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 28px; }
+    .method-tag {
+      background: white; border: 2px solid var(--border); color: var(--navy);
+      padding: 9px 18px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;
       transition: all 0.2s;
     }
-    .nav-links a:hover, .nav-links a.active {
-      background: var(--light);
-      color: var(--blue);
-    }
-    .nav-cta {
-      background: var(--accent);
-      color: var(--navy) !important;
-      font-weight: 600 !important;
-      padding: 9px 18px !important;
-    }
-    .nav-cta:hover { background: #d4911a !important; color: var(--white) !important; }
+    .method-tag:hover { border-color: var(--red); color: var(--red); background: #fff5f5; }
 
-    /* ── BREADCRUMB ── */
-    .breadcrumb {
-      background: var(--light);
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.82rem;
-      color: var(--gray);
+    /* Image side */
+    .sblock-image {
+      border-radius: 14px; overflow: hidden; height: 400px;
+      background: linear-gradient(135deg, var(--navy), var(--steel));
+      display: flex; align-items: center; justify-content: center; font-size: 5rem;
+      box-shadow: var(--shadow-md); position: relative;
     }
-    .breadcrumb-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .breadcrumb a { color: var(--blue); text-decoration: none; }
-    .breadcrumb a:hover { text-decoration: underline; }
+    .sblock-image img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* ── PAGE HERO ── */
-    .page-hero {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, #1e4d8c 100%);
-      color: var(--white);
-      padding: 64px 24px 56px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    /* Access grid */
+    .access-products { max-width: 1200px; margin: 48px auto 0; }
+    .access-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .access-card {
+      background: white; border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; transition: all 0.28s;
     }
-    .page-hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    .access-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .ac-img {
+      height: 155px; background: linear-gradient(135deg, var(--navy-mid), var(--steel));
+      display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
     }
-    .page-hero h1 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-    .page-hero p {
-      font-size: 1.05rem;
-      color: #b8c8e0;
-      max-width: 640px;
-      margin: 0 auto;
-    }
+    .ac-img img { width: 100%; height: 100%; object-fit: cover; }
+    .ac-body { padding: 16px; }
+    .ac-body h4 { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; text-transform: uppercase; color: var(--navy); }
 
-    /* ── STICKY SERVICE NAV ── */
-    .service-nav {
-      background: var(--navy);
-      overflow-x: auto;
-      scrollbar-width: none;
+    /* Objectives */
+    .obj-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 20px 0 28px; }
+    .obj-item {
+      background: var(--light); border-radius: 8px; padding: 18px;
+      border-left: 3px solid var(--red);
     }
-    .service-nav::-webkit-scrollbar { display: none; }
-    .service-nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      gap: 2px;
-      white-space: nowrap;
-    }
-    .service-nav a {
-      color: #8a9ab8;
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 500;
-      padding: 13px 14px;
-      display: inline-block;
-      border-bottom: 3px solid transparent;
-      transition: all 0.2s;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .service-nav a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
+    .obj-num { font-family: 'Oswald', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--red); line-height: 1; margin-bottom: 8px; }
+    .obj-text { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
 
-    /* ── SERVICE SECTIONS ── */
-    .service-section {
-      padding: 80px 0;
-      border-bottom: 1px solid var(--border);
+    /* Callout box */
+    .callout {
+      background: var(--navy); color: white; border-radius: 10px; padding: 22px 24px;
+      margin: 20px 0 28px; display: flex; gap: 16px; align-items: flex-start;
     }
-    .service-section:nth-child(even) {
-      background: var(--light);
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    .callout-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .callout h4 { font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 600; text-transform: uppercase; margin-bottom: 4px; }
+    .callout p { font-size: 0.9rem; color: #9ab8d0; line-height: 1.6; }
 
-    .service-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-    .service-number {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 5rem;
-      font-weight: 800;
-      color: var(--border);
-      line-height: 1;
-      min-width: 80px;
-      text-align: right;
-    }
-    .service-title-block {}
-    .service-tag {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--navy);
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 3px 10px;
-      border-radius: 20px;
-      margin-bottom: 8px;
-    }
-    .service-title-block h2 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--navy);
-      line-height: 1.1;
-    }
-    .service-title-block p.lead {
-      color: var(--gray);
-      margin-top: 8px;
-      font-size: 1rem;
-      max-width: 600px;
-    }
+    /* CTA */
+    .srv-cta { background: linear-gradient(135deg, var(--red), #8b1a1e); padding: 72px 24px; text-align: center; }
+    .srv-cta h2 { font-family: 'Oswald', sans-serif; font-size: clamp(2rem,4vw,2.8rem); font-weight: 700; color: white; text-transform: uppercase; margin-bottom: 14px; }
+    .srv-cta p { color: rgba(255,255,255,0.82); font-size: 1.05rem; margin-bottom: 30px; }
 
-    .service-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
+    @media (max-width: 900px) {
+      .sblock-inner, .sblock-inner.flip { grid-template-columns: 1fr; direction: ltr; }
+      .access-grid { grid-template-columns: 1fr 1fr; }
+      .obj-grid { grid-template-columns: 1fr; }
     }
-    .service-grid.reverse { direction: rtl; }
-    .service-grid.reverse > * { direction: ltr; }
-
-    .service-img {
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-    }
-    .service-img img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      display: block;
-    }
-    .service-img-badge {
-      position: absolute;
-      bottom: 16px;
-      left: 16px;
-      background: rgba(10,22,40,0.9);
-      color: var(--white);
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: 20px;
-      backdrop-filter: blur(4px);
-    }
-
-    .service-content h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--navy);
-      margin: 0 0 12px;
-      letter-spacing: 0.5px;
-    }
-    .service-content p {
-      color: var(--gray);
-      margin-bottom: 20px;
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    .feature-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 24px;
-    }
-    .feature-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.9rem;
-      color: var(--text);
-      line-height: 1.5;
-    }
-    .feature-list li::before {
-      content: '✓';
-      background: var(--blue);
-      color: var(--white);
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.65rem;
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .tags-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 24px;
-    }
-    .tag {
-      background: var(--light);
-      border: 1px solid var(--border);
-      color: var(--blue);
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 20px;
-    }
-
-    .sub-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 12px;
-      margin: 24px 0;
-    }
-    .sub-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px;
-      text-align: center;
-      transition: all 0.2s;
-    }
-    .sub-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 4px 12px rgba(232,160,32,0.15);
-      transform: translateY(-2px);
-    }
-    .sub-card .sc-icon {
-      font-size: 1.6rem;
-      margin-bottom: 6px;
-    }
-    .sub-card .sc-name {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.3;
-    }
-
-    .info-boxes {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin: 20px 0;
-    }
-    .info-box {
-      background: var(--navy);
-      color: var(--white);
-      border-radius: 10px;
-      padding: 16px;
-    }
-    .info-box .ib-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #8a9ab8;
-      margin-bottom: 4px;
-    }
-    .info-box .ib-val {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-    .info-box .ib-desc {
-      font-size: 0.8rem;
-      color: #aab4c8;
-      margin-top: 2px;
-    }
-
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--blue);
-      color: var(--white);
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 600;
-      padding: 12px 22px;
-      border-radius: 8px;
-      transition: all 0.2s;
-    }
-    .cta-btn:hover {
-      background: var(--navy);
-      transform: translateY(-1px);
-    }
-    .cta-btn.accent {
-      background: var(--accent);
-      color: var(--navy);
-    }
-    .cta-btn.accent:hover {
-      background: #d4911a;
-      color: var(--white);
-    }
-
-    /* ── CTA BANNER ── */
-    .cta-banner {
-      background: linear-gradient(135deg, var(--navy), var(--blue));
-      color: var(--white);
-      padding: 64px 24px;
-      text-align: center;
-    }
-    .cta-banner h2 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .cta-banner p { color: #b8c8e0; margin-bottom: 28px; }
-    .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      color: #8a9ab8;
-      padding: 48px 0 0;
-    }
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      gap: 40px;
-      padding-bottom: 40px;
-    }
-    .footer-brand img { height: 40px; margin-bottom: 12px; filter: brightness(0) invert(1); opacity: 0.8; }
-    .footer-brand p { font-size: 0.85rem; line-height: 1.6; }
-    footer h4 {
-      color: var(--white);
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 16px;
-    }
-    footer ul { list-style: none; }
-    footer ul li { margin-bottom: 8px; }
-    footer ul li a { color: #8a9ab8; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-    footer ul li a:hover { color: var(--accent); }
-    .footer-contact p { font-size: 0.85rem; margin-bottom: 8px; display: flex; gap: 8px; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 16px 24px;
-      text-align: center;
-      font-size: 0.78rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* ── FLOAT BTNS ── */
-    .float-btns {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 200;
-    }
-    .float-btn {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
-    }
-    .float-btn:hover { transform: scale(1.05); }
-    .float-call { background: var(--blue); color: var(--white); }
-    .float-wa { background: #25d366; color: var(--white); }
-
-    .scroll-top {
-      position: fixed;
-      bottom: 24px;
-      left: 24px;
-      width: 40px;
-      height: 40px;
-      background: var(--navy);
-      color: var(--white);
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .scroll-top:hover { background: var(--blue); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .service-grid { grid-template-columns: 1fr; }
-      .service-grid.reverse { direction: ltr; }
-      .footer-inner { grid-template-columns: 1fr 1fr; }
-      .service-header { flex-direction: column; gap: 8px; }
-      .service-number { font-size: 3rem; min-width: auto; }
-      .info-boxes { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-    }
-    @media (max-width: 480px) {
-      .footer-inner { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 600px) { .access-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
-  <div class="topbar-inner">
-    <div>
-      <a href="tel:8369803028">📞 8369 803 028</a> &nbsp;/&nbsp;
-      <a href="tel:9591742073">9591742073</a>
-    </div>
-    <div>
-      <a href="mailto:activefacadesales@gmail.com">✉️ activefacadesales@gmail.com</a>
-      &nbsp;&nbsp;
-      <a href="contact.html">📋 Free Site Survey</a>
-    </div>
-  </div>
+  <a href="tel:8369803028">📞 8369 803 028 / 9591742073</a>
+  <a href="mailto:activefacadesales@gmail.com">✉️ activefacadesales@gmail.com</a>
+  <a href="contact.html">📋 Free Site Survey</a>
 </div>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="AFS"/></a>
@@ -550,715 +129,226 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="services.html" class="active">Services</a></li>
-      <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+      <li><a href="contact.html" class="nav-cta-btn">Get a Quote</a></li>
     </ul>
+    <div class="hamburger"><span></span><span></span><span></span></div>
   </div>
 </nav>
 
-<!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="index.html">Home</a> › Services
+<div class="page-header">
+  <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span>Services</span></div>
+  <h1>Our <span>Services</span></h1>
+  <p>Comprehensive facade solutions — from cleaning to access systems to safety audits</p>
+</div>
+
+<!-- STICKY TABS -->
+<div class="srv-tabs-wrap">
+  <div class="srv-tabs">
+    <a href="#facade-cleaning" class="srv-tab active">🪣 Cleaning</a>
+    <a href="#spiderman" class="srv-tab">🧗 Spiderman</a>
+    <a href="#access-solutions" class="srv-tab">🏗️ Access</a>
+    <a href="#restoration" class="srv-tab">🔧 Restoration</a>
+    <a href="#maintenance" class="srv-tab">🔩 Maintenance</a>
+    <a href="#safety" class="srv-tab">🦺 Safety</a>
   </div>
 </div>
 
-<!-- PAGE HERO -->
-<div class="page-hero">
-  <h1>Our Services</h1>
-  <p>Comprehensive facade solutions — from BMU systems and rope access to cleaning, restoration, and safety management</p>
-</div>
-
-<!-- SERVICE QUICK NAV -->
-<div class="service-nav">
-  <div class="service-nav-inner">
-    <a href="#roof-car-bmu-system">🏗️ Roof Car BMU</a>
-    <a href="#monorail-system">🛤️ Monorail</a>
-    <a href="#power-suspended-platforms">⚡ Suspended Platforms</a>
-    <a href="#aerial-work-platform">🚁 Aerial / Scaffold</a>
-    <a href="#davit-jib-system">🔩 Davit JIB</a>
-    <a href="#facade-cleaning">🪣 Facade Cleaning</a>
-    <a href="#spiderman">🧗 Spiderman</a>
-    <a href="#access-solutions">🏗️ Access Solutions</a>
-    <a href="#restoration">🔧 Restoration</a>
-    <a href="#maintenance">📋 Maintenance</a>
-    <a href="#safety">🦺 Safety</a>
-  </div>
-</div>
-
-
-<!-- ══════════════════════════════════
-     01 — ROOF CAR BMU SYSTEM
-═══════════════════════════════════ -->
-<section class="service-section" id="roof-car-bmu-system">
-  <div class="container">
-    <div class="service-header">
-      <div class="service-number">01</div>
-      <div class="service-title-block">
-        <span class="service-tag">Access System</span>
-        <h2>Roof Car – BMU System</h2>
-        <p class="lead">Tailor-made Building Maintenance Unit solutions for high-rise and complex facade buildings — from design and fabrication to installation and long-term support.</p>
+<!-- 1. FACADE CLEANING -->
+<div class="service-block" id="facade-cleaning">
+  <div class="sblock-inner">
+    <div class="sblock-text reveal">
+      <span class="sblock-num">01</span>
+      <div class="section-eyebrow">Service</div>
+      <h2>Facade <span>Cleaning</span></h2>
+      <div class="sblock-divider"></div>
+      <p>We undertake facade cleaning contracts for high-performance buildings with glass facades or structural glazing. Our trained teams restore building exteriors to pristine condition using proven, safe methods.</p>
+      <div class="method-tags">
+        <span class="method-tag">💧 Water Soaking</span>
+        <span class="method-tag">🔫 Pressure Washing</span>
+        <span class="method-tag">🧪 Chemical Cleaning</span>
+        <span class="method-tag">♨️ Steam Cleaning</span>
       </div>
+      <a href="contact.html" class="btn btn-primary">Request This Service <span class="arrow">→</span></a>
     </div>
-
-    <div class="service-grid">
-      <div class="service-img">
-        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="BMU Roof Car System"/>
-        <span class="service-img-badge">🏗️ Roof Car BMU</span>
-      </div>
-      <div class="service-content">
-        <h3>What is a Roof Car BMU?</h3>
-        <p>A Building Maintenance Unit (BMU) is a permanent access system installed on the rooftop of a high-rise building. The roof car travels along precision tracks on the roof, suspending a cradle or platform over the building facade — enabling safe maintenance, cleaning, and inspection at any height.</p>
-        <p>Active Facade System designs, fabricates, and installs custom BMU systems tailored to the geometry and structural requirements of each building.</p>
-
-        <ul class="feature-list">
-          <li>Custom-designed roof car to suit building geometry and roof structure</li>
-          <li>Precision track systems for smooth, controlled horizontal movement</li>
-          <li>In-house factory fabrication with full quality control</li>
-          <li>Electrically powered hoisting for safe, efficient operation</li>
-          <li>Complete installation, load testing, and commissioning</li>
-          <li>Ongoing inspection, servicing, and emergency call-out support</li>
-          <li>Compliance with IS / BS standards for work-at-height equipment</li>
-        </ul>
-
-        <div class="info-boxes">
-          <div class="info-box">
-            <div class="ib-label">Capacity</div>
-            <div class="ib-val">250–500 kg</div>
-            <div class="ib-desc">Platform load capacity</div>
-          </div>
-          <div class="info-box">
-            <div class="ib-label">Height Range</div>
-            <div class="ib-val">Any Height</div>
-            <div class="ib-desc">Suitable for all high-rises</div>
-          </div>
-        </div>
-
-        <a href="contact.html" class="cta-btn accent">Request a Free Site Survey →</a>
-      </div>
+    <div class="sblock-image reveal reveal-delay-2">
+      <img src="https://vishu1196.github.io/static/Facade_cleaning.jpeg" loading="lazy" alt="Facade Cleaning" onerror="this.parentElement.innerHTML='🪣'"/>
     </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     02 — MONORAIL SYSTEM
-═══════════════════════════════════ -->
-<section class="service-section" id="monorail-system">
-  <div class="container">
-    <div class="service-header">
-      <div class="service-number">02</div>
-      <div class="service-title-block">
-        <span class="service-tag">Access System</span>
-        <h2>Monorail System</h2>
-        <p class="lead">Custom overhead monorail track systems for controlled, horizontal facade access — ideal for buildings with complex rooflines or varying setbacks.</p>
-      </div>
-    </div>
-
-    <div class="service-grid reverse">
-      <div class="service-img">
-        <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&q=80" alt="Monorail System"/>
-        <span class="service-img-badge">🛤️ Monorail Track</span>
-      </div>
-      <div class="service-content">
-        <h3>Precision Track Movement</h3>
-        <p>Monorail systems use an overhead track fixed to the building structure to allow a suspended cradle to traverse horizontally with precision. This is ideal for buildings where a traditional roof car is not feasible — such as podium levels, irregular rooflines, or cantilevered facades.</p>
-        <p>Each system is designed to the specific profile of your building, ensuring complete facade coverage in the most efficient way possible.</p>
-
-        <ul class="feature-list">
-          <li>Custom monorail track design for building-specific geometry</li>
-          <li>Smooth, motorised horizontal traverse along fixed track</li>
-          <li>Secure anchoring with safety-focused structural connections</li>
-          <li>Compatible with single-man and two-man suspended cradles</li>
-          <li>Suitable for podium facades, irregular setbacks, and stepped profiles</li>
-          <li>End-to-end service: installation, inspection, and annual maintenance</li>
-        </ul>
-
-        <div class="tags-row">
-          <span class="tag">Motorised Traverse</span>
-          <span class="tag">Custom Track Design</span>
-          <span class="tag">Podium Facades</span>
-          <span class="tag">Safe Anchoring</span>
-        </div>
-
-        <a href="contact.html" class="cta-btn">Enquire About Monorail Systems →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     03 — POWER SUSPENDED PLATFORMS
-═══════════════════════════════════ -->
-<section class="service-section" id="power-suspended-platforms">
-  <div class="container">
-    <div class="service-header">
-      <div class="service-number">03</div>
-      <div class="service-title-block">
-        <span class="service-tag">Platform System</span>
-        <h2>Power Suspended Platforms</h2>
-        <p class="lead">Electrically powered suspended work platforms for efficient, safe access to building facades — suitable for cleaning, restoration, and installation tasks.</p>
-      </div>
-    </div>
-
-    <div class="service-grid">
-      <div class="service-img">
-        <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=800&q=80" alt="Power Suspended Platform"/>
-        <span class="service-img-badge">⚡ Power Platform</span>
-      </div>
-      <div class="service-content">
-        <h3>Motorised Access at Height</h3>
-        <p>Power suspended platforms (also called motorised cradles) are electrically operated work platforms that hang from a roof-mounted suspension system. Operators control vertical movement using on-board controls, allowing them to access any section of a facade safely and efficiently.</p>
-        <p>We supply solo (single-person) and two-man cradle variants, both designed and tested for safe at-height operations.</p>
-
-        <div class="sub-cards">
-          <div class="sub-card">
-            <div class="sc-icon">👤</div>
-            <div class="sc-name">Solo Cradle</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">👥</div>
-            <div class="sc-name">Two-Man Power Cradle</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">⚙️</div>
-            <div class="sc-name">Electric Hoist</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">🛡️</div>
-            <div class="sc-name">Safety Locks</div>
-          </div>
-        </div>
-
-        <ul class="feature-list">
-          <li>Electrically powered — smooth, controlled descent and ascent</li>
-          <li>Fail-safe braking and overload protection built in</li>
-          <li>Compact, easy to deploy and relocate</li>
-          <li>Available in solo and two-man configurations</li>
-          <li>Used for cleaning, waterproofing, glass replacement, and painting</li>
-        </ul>
-
-        <a href="contact.html" class="cta-btn accent">Request This Service →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     04 — AERIAL WORK PLATFORM & AI SCAFFOLD
-═══════════════════════════════════ -->
-<section class="service-section" id="aerial-work-platform">
-  <div class="container">
-    <div class="service-header">
-      <div class="service-number">04</div>
-      <div class="service-title-block">
-        <span class="service-tag">Elevated Access</span>
-        <h2>Aerial Work Platform &amp; Aluminium Scaffold</h2>
-        <p class="lead">Flexible elevated access solutions for lower-height facades, podiums, and maintenance tasks requiring mobility and quick deployment.</p>
-      </div>
-    </div>
-
-    <div class="service-grid reverse">
-      <div class="service-img">
-        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80" alt="Aerial Work Platform"/>
-        <span class="service-img-badge">🚁 Elevated Access</span>
-      </div>
-      <div class="service-content">
-        <h3>Safe &amp; Flexible Elevated Access</h3>
-        <p>Aerial work platforms (AWPs) provide safe, self-contained elevated access for maintenance, installation, and inspection tasks at lower to mid-range heights. Combined with aluminium (AI) scaffold systems, these offer the most versatile and rapidly deployable access solution for building maintenance teams.</p>
-        <p>Our systems are designed for ease of movement around a site while maintaining rigorous safety standards — no permanent structural modifications required.</p>
-
-        <ul class="feature-list">
-          <li>Rapid deployment — no permanent installation required</li>
-          <li>Aluminium scaffold for light, adjustable elevated platforms</li>
-          <li>Ideal for podiums, lower facades, and internal atrium maintenance</li>
-          <li>Suitable for glass cleaning, silicone pasting, and minor repairs</li>
-          <li>Operated by trained, certified technicians</li>
-          <li>Safe load ratings and anti-slip platforms as standard</li>
-        </ul>
-
-        <div class="tags-row">
-          <span class="tag">Rapid Deployment</span>
-          <span class="tag">Aluminium Scaffold</span>
-          <span class="tag">No Permanent Install</span>
-          <span class="tag">Podium Access</span>
-        </div>
-
-        <a href="contact.html" class="cta-btn">Enquire About This System →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     05 — DAVIT JIB SYSTEM
-═══════════════════════════════════ -->
-<section class="service-section" id="davit-jib-system">
-  <div class="container">
-    <div class="service-header">
-      <div class="service-number">05</div>
-      <div class="service-title-block">
-        <span class="service-tag">Access System</span>
-        <h2>Davit JIB System</h2>
-        <p class="lead">Floor-mounted and parapet-mounted davit jib systems offering secure, flexible facade access with strong base support — ideal for buildings without a central BMU.</p>
-      </div>
-    </div>
-
-    <div class="service-grid">
-      <div class="service-img">
-        <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&q=80" alt="Davit Jib System"/>
-        <span class="service-img-badge">🔩 Davit JIB</span>
-      </div>
-      <div class="service-content">
-        <h3>Flexible Point-Access Solution</h3>
-        <p>Davit jib systems provide localised facade access by suspending a cradle or rope access operator from a fixed jib arm. Installed at intervals around the roof parapet or floor slab, they offer building managers a flexible, cost-effective alternative to a full roof car BMU system.</p>
-        <p>We supply motorised davits, parapet davits, and roof davits — all custom-sized to the building's structural requirements.</p>
-
-        <div class="sub-cards">
-          <div class="sub-card">
-            <div class="sc-icon">⚡</div>
-            <div class="sc-name">Motorised Davit</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">🏛️</div>
-            <div class="sc-name">Parapet Davit</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">🏠</div>
-            <div class="sc-name">Roof Davit</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">🔧</div>
-            <div class="sc-name">Prophet JIB</div>
-          </div>
-        </div>
-
-        <ul class="feature-list">
-          <li>Floor-mounted base with strong, reliable structural anchoring</li>
-          <li>Motorised and manual variants available</li>
-          <li>Easy rotation to cover multiple facade panels per installation point</li>
-          <li>Suitable for buildings where full BMU is not viable</li>
-          <li>Full installation, load testing, and certification included</li>
-          <li>Annual inspection and maintenance contracts available</li>
-        </ul>
-
-        <a href="contact.html" class="cta-btn accent">Request a Davit System →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     06 — FACADE CLEANING
-═══════════════════════════════════ -->
-<section class="service-section" id="facade-cleaning">
-  <div class="container">
-    <div class="service-header">
-      <div class="service-number">06</div>
-      <div class="service-title-block">
-        <span class="service-tag">Cleaning Service</span>
-        <h2>Facade Cleaning</h2>
-        <p class="lead">Professional facade cleaning contracts for glass, stone, metal, and composite cladding — restoring your building's exterior to pristine condition.</p>
-      </div>
-    </div>
-
-    <div class="service-grid reverse">
-      <div class="service-img">
-        <img src="https://images.unsplash.com/photo-1594818898109-44104f5b5e97?w=800&q=80" alt="Facade Cleaning"/>
-        <span class="service-img-badge">🪣 Facade Cleaning</span>
-      </div>
-      <div class="service-content">
-        <h3>Restore Your Building's Exterior</h3>
-        <p>We undertake facade cleaning contracts for high-performance buildings with glass facades or structural glazing. Our trained teams use the most appropriate cleaning methodology based on the facade material, level of soiling, and environmental conditions.</p>
-        <p>All operations are conducted safely using certified at-height access systems — whether rope access, cradles, or BMU — with no disruption to building occupants.</p>
-
-        <div class="tags-row">
-          <span class="tag">💧 Water Soaking</span>
-          <span class="tag">🔫 Pressure Washing</span>
-          <span class="tag">🧪 Chemical Cleaning</span>
-          <span class="tag">♨️ Steam Cleaning</span>
-        </div>
-
-        <ul class="feature-list">
-          <li>Glass, ACP, stone, GRC and composite cladding all covered</li>
-          <li>Specialist chemical selection for each facade type</li>
-          <li>Safe access using BMU, davit, rope, or scaffold as required</li>
-          <li>One-off deep cleans and ongoing maintenance contracts</li>
-          <li>Minimum disruption to building operations</li>
-          <li>Safe disposal of all cleaning waste and runoff</li>
-        </ul>
-
-        <div class="info-boxes">
-          <div class="info-box">
-            <div class="ib-label">Contract Type</div>
-            <div class="ib-val">One-Off / AMC</div>
-            <div class="ib-desc">Flexible engagement options</div>
-          </div>
-          <div class="info-box">
-            <div class="ib-label">Coverage</div>
-            <div class="ib-val">All Mumbai</div>
-            <div class="ib-desc">Navi Mumbai &amp; MMR</div>
-          </div>
-        </div>
-
-        <a href="contact.html" class="cta-btn">Request a Cleaning Contract →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     07 — SPIDERMAN / ROPE ACCESS
-═══════════════════════════════════ -->
-<section class="service-section" id="spiderman">
-  <div class="container">
-    <div class="service-header">
-      <div class="service-number">07</div>
-      <div class="service-title-block">
-        <span class="service-tag">Rope Access</span>
-        <h2>Spiderman Service</h2>
-        <p class="lead">Industrial rope access — low capital cost, fail-safe, one-man operable with imported certified equipment from UK and France.</p>
-      </div>
-    </div>
-
-    <div class="service-grid">
-      <div class="service-img">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Rope Access Spiderman"/>
-        <span class="service-img-badge">🧗 Rope Access</span>
-      </div>
-      <div class="service-content">
-        <h3>Certified Industrial Rope Access</h3>
-        <p>Our "Spiderman" rope access service uses industrial-grade Kermantle ropes and imported access kits (UK / France) to allow certified operators to descend building facades with complete safety and precision — at a fraction of the cost of scaffolding or BMU deployment.</p>
-        <p>Ideal for one-off repairs, inspections, silicone pasting, and targeted cleaning where a full access system is not required.</p>
-
-        <div class="sub-cards">
-          <div class="sub-card">
-            <div class="sc-icon">🇬🇧</div>
-            <div class="sc-name">UK Imported Kits</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">🇫🇷</div>
-            <div class="sc-name">France Gear</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">🪢</div>
-            <div class="sc-name">Kermantle Ropes</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">🔒</div>
-            <div class="sc-name">Fail Safe System</div>
-          </div>
-        </div>
-
-        <ul class="feature-list">
-          <li>Fail-safe capability — independent safety line at all times</li>
-          <li>1:2 pulley ratio for smooth, controlled descent</li>
-          <li>One-man operation — minimal crew, maximum efficiency</li>
-          <li>Portable and lightweight — no roof equipment needed</li>
-          <li>Certified Kermantle ropes to BS/EN standards</li>
-          <li>Operators are trained and regularly assessed for competence</li>
-        </ul>
-
-        <a href="contact.html" class="cta-btn accent">Book a Rope Access Team →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     08 — ACCESS SOLUTIONS
-═══════════════════════════════════ -->
-<section class="service-section" id="access-solutions">
-  <div class="container">
-    <div class="service-header">
-      <div class="service-number">08</div>
-      <div class="service-title-block">
-        <span class="service-tag">Equipment Supply</span>
-        <h2>Access Solutions</h2>
-        <p class="lead">Full range of facade access equipment — supply, installation, and maintenance of BMU trolleys, cradles, davits, monorails, eyebolts and more.</p>
-      </div>
-    </div>
-
-    <div class="service-grid reverse">
-      <div class="service-img">
-        <img src="https://images.unsplash.com/photo-1609803384069-19f3fd6b0a04?w=800&q=80" alt="Access Solutions"/>
-        <span class="service-img-badge">🏗️ Access Equipment</span>
-      </div>
-      <div class="service-content">
-        <h3>Complete Range of Access Equipment</h3>
-        <p>We supply, install, commission, and maintain the full spectrum of facade access systems used in the Indian construction and facility management sector. From rooftop BMU trolleys to simple eyebolt anchor lines, we have the solution your building needs.</p>
-
-        <div class="sub-cards">
-          <div class="sub-card">
-            <div class="sc-icon">🏗️</div>
-            <div class="sc-name">BMU Trolley System</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">👤</div>
-            <div class="sc-name">Solo Cradle</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">👥</div>
-            <div class="sc-name">Two-Man Cradle</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">⚡</div>
-            <div class="sc-name">Motorised Davit</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">🏛️</div>
-            <div class="sc-name">Parapet Davit</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">🏠</div>
-            <div class="sc-name">Roof Davit</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">🔧</div>
-            <div class="sc-name">Prophet JIB</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">🛤️</div>
-            <div class="sc-name">Monorail</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">⚓</div>
-            <div class="sc-name">Eyebolt &amp; Scaffold</div>
-          </div>
-        </div>
-
-        <a href="contact.html" class="cta-btn">Enquire About Access Equipment →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     09 — FACADE RESTORATION
-═══════════════════════════════════ -->
-<section class="service-section" id="restoration">
-  <div class="container">
-    <div class="service-header">
-      <div class="service-number">09</div>
-      <div class="service-title-block">
-        <span class="service-tag">Restoration</span>
-        <h2>Facade Restoration</h2>
-        <p class="lead">Bespoke restoration services for ageing or damaged facades — waterproofing, glass replacement, stone cladding, and leakage remediation.</p>
-      </div>
-    </div>
-
-    <div class="service-grid">
-      <div class="service-img">
-        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="Facade Restoration"/>
-        <span class="service-img-badge">🔧 Restoration</span>
-      </div>
-      <div class="service-content">
-        <h3>Repair, Protect &amp; Restore</h3>
-        <p>Over time, building facades are subject to environmental exposure, structural movement, and material degradation. Unchecked, this leads to water infiltration, glass failure, and aesthetic deterioration. Our restoration service addresses all these issues comprehensively.</p>
-        <p>We carry out targeted interventions — from silicone joint replacement to full glass unit swaps — using safe at-height access and specialist materials.</p>
-
-        <ul class="feature-list">
-          <li>Water leakage investigation, testing, and remediation</li>
-          <li>Silicone waterproofing — joint sealing and re-pasting</li>
-          <li>Facade glass unit inspection and replacement</li>
-          <li>Stone cladding repair, re-fixing, and replacement</li>
-          <li>ACP panel repair and colour-matched restoration</li>
-          <li>Structural glazing re-bonding and sealant renewal</li>
-        </ul>
-
-        <div class="tags-row">
-          <span class="tag">Silicone Pasting</span>
-          <span class="tag">Glass Replacement</span>
-          <span class="tag">Waterproofing</span>
-          <span class="tag">Stone Cladding</span>
-          <span class="tag">Leakage Repair</span>
-        </div>
-
-        <a href="contact.html" class="cta-btn accent">Request a Restoration Survey →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     10 — FACADE MAINTENANCE
-═══════════════════════════════════ -->
-<section class="service-section" id="maintenance">
-  <div class="container">
-    <div class="service-header">
-      <div class="service-number">10</div>
-      <div class="service-title-block">
-        <span class="service-tag">Annual Contract</span>
-        <h2>Facade Maintenance</h2>
-        <p class="lead">Annual BMU and facade maintenance contracts with regular visits — keeping your access equipment and building exterior in peak, safe condition year-round.</p>
-      </div>
-    </div>
-
-    <div class="service-grid reverse">
-      <div class="service-img">
-        <img src="https://images.unsplash.com/photo-1562516155-e0c1ee44059b?w=800&q=80" alt="Facade Maintenance"/>
-        <span class="service-img-badge">📋 AMC</span>
-      </div>
-      <div class="service-content">
-        <h3>Annual Maintenance Contracts (AMC)</h3>
-        <p>Our structured Annual Maintenance Contracts provide building managers with peace of mind — scheduled monthly inspections, routine servicing, performance reporting, and rapid emergency call-out when needed.</p>
-        <p>An AMC prevents costly breakdowns, ensures regulatory compliance, and extends the life of your facade access equipment significantly.</p>
-
-        <div class="sub-cards">
-          <div class="sub-card">
-            <div class="sc-icon">🔍</div>
-            <div class="sc-name">Monthly Inspection</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">⚙️</div>
-            <div class="sc-name">Routine Servicing</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">🚨</div>
-            <div class="sc-name">Emergency Call-Out</div>
-          </div>
-          <div class="sub-card">
-            <div class="sc-icon">📄</div>
-            <div class="sc-name">Maintenance Reports</div>
-          </div>
-        </div>
-
-        <ul class="feature-list">
-          <li>Monthly site visits for inspection, testing, and commissioning</li>
-          <li>Planned preventive maintenance schedule to avoid breakdowns</li>
-          <li>Transparent maintenance reporting and equipment history log</li>
-          <li>Emergency deployment of technician within agreed SLA</li>
-          <li>Cost optimisation — reduce wear-and-tear and extend equipment life</li>
-          <li>Compliance documentation for building audit purposes</li>
-        </ul>
-
-        <a href="contact.html" class="cta-btn">Get an AMC Quote →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     11 — SAFETY & FACILITY MANAGEMENT
-═══════════════════════════════════ -->
-<section class="service-section" id="safety">
-  <div class="container">
-    <div class="service-header">
-      <div class="service-number">11</div>
-      <div class="service-title-block">
-        <span class="service-tag">Safety &amp; Compliance</span>
-        <h2>Safety &amp; Facility Management</h2>
-        <p class="lead">Comprehensive at-height safety management — from free site surveys and risk assessments to BMU audits, pull-out testing, and floor register brackets.</p>
-      </div>
-    </div>
-
-    <div class="service-grid">
-      <div class="service-img">
-        <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?w=800&q=80" alt="Safety Management"/>
-        <span class="service-img-badge">🦺 Safety &amp; Compliance</span>
-      </div>
-      <div class="service-content">
-        <h3>Keep Your Building Safe &amp; Compliant</h3>
-        <p>At-height work carries significant risk if not properly planned and managed. Our safety and facility management services ensure every aspect of your building's access and maintenance regime meets current occupational health and safety standards.</p>
-        <p>We also supply and install floor register brackets and manual davit systems as part of a complete safety access setup for buildings requiring fixed anchor points.</p>
-
-        <ul class="feature-list">
-          <li>Free site survey and consulting for work-at-height requirements</li>
-          <li>Facade access risk assessments and job safety analysis (JSA)</li>
-          <li>Occupational health and safety risk mitigation strategies</li>
-          <li>BMU condition reports and full maintenance audit</li>
-          <li>BMU audit and pull-out testing to load standard</li>
-          <li>Floor register brackets — supply, install, and certification</li>
-          <li>Manual davit systems — supply and installation</li>
-          <li>Performance specifications for refurbishment projects</li>
-          <li>Compliance documentation for building inspections</li>
-        </ul>
-
-        <div class="info-boxes">
-          <div class="info-box">
-            <div class="ib-label">Site Survey</div>
-            <div class="ib-val">100% Free</div>
-            <div class="ib-desc">No obligation assessment</div>
-          </div>
-          <div class="info-box">
-            <div class="ib-label">Response</div>
-            <div class="ib-val">24/7</div>
-            <div class="ib-desc">Emergency support available</div>
-          </div>
-        </div>
-
-        <a href="contact.html" class="cta-btn accent">Request a Free Safety Survey →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- CTA BANNER -->
-<div class="cta-banner">
-  <h2>Need a Custom Solution?</h2>
-  <p>Get a free site survey — we'll assess your building and recommend the perfect approach.</p>
-  <div class="cta-buttons">
-    <a href="contact.html" class="cta-btn accent">📋 Request Free Site Survey</a>
-    <a href="tel:8369803028" class="cta-btn">📞 Call Now</a>
   </div>
 </div>
 
+<!-- 2. SPIDERMAN -->
+<div class="service-block" id="spiderman">
+  <div class="sblock-inner flip">
+    <div class="sblock-text reveal">
+      <span class="sblock-num">02</span>
+      <div class="section-eyebrow">Service</div>
+      <h2>Spiderman <span>Service</span></h2>
+      <div class="sblock-divider"></div>
+      <p>Low capital cost, low cleaning cost, safe and operative-friendly rope access for buildings of any height. Operators are certified and use premium imported gear.</p>
+      <ul class="feat-list">
+        <li><span class="feat-check">✓</span> Fail Safe Capability</li>
+        <li><span class="feat-check">✓</span> One is to Two Pulley Ratio</li>
+        <li><span class="feat-check">✓</span> One Man Operation</li>
+        <li><span class="feat-check">✓</span> Portable and Light Weight</li>
+        <li><span class="feat-check">✓</span> Imported Kits from UK / France</li>
+        <li><span class="feat-check">✓</span> Certified Kermantle Ropes</li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary">Request This Service <span class="arrow">→</span></a>
+    </div>
+    <div class="sblock-image reveal reveal-delay-2">
+      <img src="https://vishu1196.github.io/static/sperderman.jpeg" loading="lazy" alt="Spiderman Rope Access" onerror="this.parentElement.innerHTML='🧗'"/>
+    </div>
+  </div>
+</div>
 
-<!-- FOOTER -->
+<!-- 3. ACCESS SOLUTIONS -->
+<div class="service-block" id="access-solutions">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="sblock-num" style="display:block;text-align:center;">03</span>
+      <div class="section-eyebrow" style="justify-content:center;">Service</div>
+      <h2 class="section-title">Access <span>Solutions</span></h2>
+      <p class="section-sub">We supply, install, and maintain a complete range of building access systems for safe, efficient facade access at any height.</p>
+    </div>
+    <div class="access-products">
+      <div class="access-grid">
+        <div class="access-card reveal reveal-delay-1"><div class="ac-img"><img src="https://vishu1196.github.io/static/cradle.png" loading="lazy" alt="BMU Trolley" onerror="this.parentElement.innerHTML='🏗️'"/></div><div class="ac-body"><h4>BMU – Trolley System</h4></div></div>
+        <div class="access-card reveal reveal-delay-2"><div class="ac-img"><img src="https://vishu1196.github.io/static/cradle.png" loading="lazy" alt="Solo Cradle" onerror="this.parentElement.innerHTML='🪜'"/></div><div class="ac-body"><h4>Solo Cradle</h4></div></div>
+        <div class="access-card reveal reveal-delay-3"><div class="ac-img"><img src="https://vishu1196.github.io/static/cradle.png" loading="lazy" alt="Power Cradle" onerror="this.parentElement.innerHTML='⚙️'"/></div><div class="ac-body"><h4>Two Man Power Cradle</h4></div></div>
+        <div class="access-card reveal reveal-delay-1"><div class="ac-img"><img src="https://vishu1196.github.io/static/Safety.jpeg" loading="lazy" alt="Motorised Davit" onerror="this.parentElement.innerHTML='🔩'"/></div><div class="ac-body"><h4>Motorised Davit</h4></div></div>
+        <div class="access-card reveal reveal-delay-2"><div class="ac-img"><img src="https://vishu1196.github.io/static/Safety.jpeg" loading="lazy" alt="Parapet Davit" onerror="this.parentElement.innerHTML='📐'"/></div><div class="ac-body"><h4>Parapet Davit</h4></div></div>
+        <div class="access-card reveal reveal-delay-3"><div class="ac-img"><img src="https://vishu1196.github.io/static/Safety.jpeg" loading="lazy" alt="Roof Davit" onerror="this.parentElement.innerHTML='🏠'"/></div><div class="ac-body"><h4>Roof Davit</h4></div></div>
+        <div class="access-card reveal reveal-delay-1"><div class="ac-img"><img src="https://vishu1196.github.io/static/Safety.jpeg" loading="lazy" alt="Prophet Jib" onerror="this.parentElement.innerHTML='📏'"/></div><div class="ac-body"><h4>Praphet Jib</h4></div></div>
+        <div class="access-card reveal reveal-delay-2"><div class="ac-img"><img src="https://vishu1196.github.io/static/Safety.jpeg" loading="lazy" alt="Monorail" onerror="this.parentElement.innerHTML='🛤️'"/></div><div class="ac-body"><h4>Monorail</h4></div></div>
+        <div class="access-card reveal reveal-delay-3"><div class="ac-img"><img src="https://vishu1196.github.io/static/Safety.jpeg" loading="lazy" alt="Eyebolt" onerror="this.parentElement.innerHTML='🔗'"/></div><div class="ac-body"><h4>Eyebolt &amp; Scaffold</h4></div></div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:36px;"><a href="contact.html" class="btn btn-primary">Enquire About Access Solutions <span class="arrow">→</span></a></div>
+  </div>
+</div>
+
+<!-- 4. RESTORATION -->
+<div class="service-block" id="restoration">
+  <div class="sblock-inner">
+    <div class="sblock-text reveal">
+      <span class="sblock-num">04</span>
+      <div class="section-eyebrow">Service</div>
+      <h2>Facade <span>Restoration</span></h2>
+      <div class="sblock-divider"></div>
+      <p>Over time, facades suffer from wear, environmental pollutants, and structural weakening. Our bespoke restoration service addresses all these issues to restore your building's exterior and long-term integrity.</p>
+      <ul class="feat-list">
+        <li><span class="feat-check">✓</span> Water Leakage Testing</li>
+        <li><span class="feat-check">✓</span> Waterproofing – Silicon Filling</li>
+        <li><span class="feat-check">✓</span> Facade Glass Unit Replacement</li>
+        <li><span class="feat-check">✓</span> Stone Cladding</li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary">Request This Service <span class="arrow">→</span></a>
+    </div>
+    <div class="sblock-image reveal reveal-delay-2">
+      <img src="https://vishu1196.github.io/static/restoration.jpeg" loading="lazy" alt="Restoration" onerror="this.parentElement.innerHTML='🔧'"/>
+    </div>
+  </div>
+</div>
+
+<!-- 5. MAINTENANCE -->
+<div class="service-block" id="maintenance">
+  <div class="sblock-inner flip">
+    <div class="sblock-text reveal">
+      <span class="sblock-num">05</span>
+      <div class="section-eyebrow">Service</div>
+      <h2>Facade <span>Maintenance</span></h2>
+      <div class="sblock-divider"></div>
+      <p>Annual BMU maintenance contracts with monthly visits for inspection, testing, and commissioning. We inspect, service, and repair equipment to ensure safe operating conditions every time.</p>
+      <div class="callout">
+        <span class="callout-icon">🚨</span>
+        <div>
+          <h4>Emergency Call-Out Service</h4>
+          <p>We deploy a technician on an urgent basis whenever system failure occurs — minimising your downtime.</p>
+        </div>
+      </div>
+      <div class="obj-grid">
+        <div class="obj-item"><div class="obj-num">01</div><div class="obj-text">Practical analysis of facade cleaning cycle to help facility teams plan usage well in advance.</div></div>
+        <div class="obj-item"><div class="obj-num">02</div><div class="obj-text">Avoid hidden financial risks with transparent maintenance reporting and equipment history.</div></div>
+        <div class="obj-item"><div class="obj-num">03</div><div class="obj-text">Minimize maintenance and wear-and-tear costs for your facade cleaning equipment.</div></div>
+      </div>
+      <a href="contact.html" class="btn btn-primary">Get a Maintenance Contract <span class="arrow">→</span></a>
+    </div>
+    <div class="sblock-image reveal reveal-delay-2">
+      <img src="https://vishu1196.github.io/static/BMU Maintenaince.jpeg" loading="lazy" alt="Maintenance" onerror="this.parentElement.innerHTML='🔩'"/>
+    </div>
+  </div>
+</div>
+
+<!-- 6. SAFETY -->
+<div class="service-block" id="safety">
+  <div class="sblock-inner">
+    <div class="sblock-text reveal">
+      <span class="sblock-num">06</span>
+      <div class="section-eyebrow">Service</div>
+      <h2>Safety &amp; Facility <span>Management</span></h2>
+      <div class="sblock-divider"></div>
+      <p>Comprehensive safety and facility management services — from free site surveys and risk assessments to BMU audits and pull-out testing, keeping your building fully compliant.</p>
+      <ul class="feat-list">
+        <li><span class="feat-check">✓</span> Free site survey &amp; consulting for work-at-height needs</li>
+        <li><span class="feat-check">✓</span> Facade access risk assessments &amp; job safety analysis</li>
+        <li><span class="feat-check">✓</span> Occupational health &amp; safety risk mitigation strategies</li>
+        <li><span class="feat-check">✓</span> BMU condition reports &amp; maintenance audit</li>
+        <li><span class="feat-check">✓</span> BMU Audit &amp; Pull-Out Testing</li>
+        <li><span class="feat-check">✓</span> Performance specification &amp; client advice for refurbishment</li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary">Request a Free Survey <span class="arrow">→</span></a>
+    </div>
+    <div class="sblock-image reveal reveal-delay-2">
+      <img src="https://vishu1196.github.io/static/Safety.jpeg" loading="lazy" alt="Safety" onerror="this.parentElement.innerHTML='🦺'"/>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="srv-cta">
+  <div class="container">
+    <h2 class="reveal">Need a Custom Solution?</h2>
+    <p class="reveal reveal-delay-1">Get a free site survey — we'll assess your building and recommend the perfect approach.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;" class="reveal reveal-delay-2">
+      <a href="contact.html" class="btn btn-outline btn-lg">📋 Free Site Survey</a>
+      <a href="tel:8369803028" class="btn btn-outline btn-lg">📞 Call Now</a>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="images/logo.png" alt="AFS"/>
-      <p>Active Facade System — specialized facade access and maintenance solutions based in Navi Mumbai. Safety, precision, and quality in every project.</p>
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="images/logo.png" alt="AFS"/><p>Active Facade System — specialized facade access and maintenance solutions, Navi Mumbai.</p></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="#facade-cleaning">Facade Cleaning</a></li><li><a href="#spiderman">Spiderman Service</a></li><li><a href="#access-solutions">Access Solutions</a></li><li><a href="#restoration">Restoration</a></li><li><a href="#maintenance">Maintenance</a></li><li><a href="#safety">Safety & Mgmt</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><div class="fci"><span class="ico">📞</span><p><a href="tel:8369803028">8369 803 028</a></p></div><div class="fci"><span class="ico">✉️</span><p><a href="mailto:activefacadesales@gmail.com">activefacadesales@gmail.com</a></p></div><div class="fci"><span class="ico">📍</span><p>Kharghar, Navi Mumbai – 410 210</p></div></div>
     </div>
-    <div>
-      <h4>Navigation</h4>
-      <ul>
-        <li><a href="index.html">🏠 Home</a></li>
-        <li><a href="about.html">👥 About Us</a></li>
-        <li><a href="services.html">⚙️ Services</a></li>
-        <li><a href="contact.html">✉️ Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#facade-cleaning">Facade Cleaning</a></li>
-        <li><a href="#spiderman">Spiderman Service</a></li>
-        <li><a href="#access-solutions">Access Solutions</a></li>
-        <li><a href="#restoration">Restoration</a></li>
-        <li><a href="#maintenance">BMU Maintenance</a></li>
-        <li><a href="#safety">Safety &amp; Facility Mgmt</a></li>
-      </ul>
-    </div>
-    <div class="footer-contact">
-      <h4>Contact Us</h4>
-      <p>📞 <a href="tel:8369803028" style="color:#8a9ab8;text-decoration:none;">8369 803 028</a></p>
-      <p>📞 <a href="tel:9591742073" style="color:#8a9ab8;text-decoration:none;">9591742073</a></p>
-      <p>✉️ <a href="mailto:activefacadesales@gmail.com" style="color:#8a9ab8;text-decoration:none;">activefacadesales@gmail.com</a></p>
-      <p>📍 Shop No.4, Sushma Apartment,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Plot E 88, Sector-3, Kharghar,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Navi Mumbai – 410 210</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    © 2025 Active Facade System. All rights reserved. Made with ❤️ in Navi Mumbai
+    <div class="footer-bottom"><span>© 2025 Active Facade System. All rights reserved.</span><span>Made with ❤️ in Navi Mumbai</span></div>
   </div>
 </footer>
 
-<!-- FLOAT BUTTONS -->
-<div class="float-btns">
-  <a href="tel:8369803028" class="float-btn float-call">📞 Call Now</a>
-  <a href="https://wa.me/918369803028" class="float-btn float-wa" target="_blank">💬 WhatsApp</a>
+<div class="float-cta">
+  <a href="tel:8369803028" class="float-btn call"><span class="ficon">📞</span><span class="float-label">Call Now</span></a>
+  <a href="https://wa.me/918369803028" class="float-btn whatsapp" target="_blank"><span class="ficon">💬</span><span class="float-label">WhatsApp</span></a>
 </div>
-<a href="#" class="scroll-top">↑</a>
+<button id="backToTop" title="Back to top">↑</button>
 
+<script src="js/main.js"></script>
+<script>
+// Active tab highlighting on scroll
+const sections = ['facade-cleaning','spiderman','access-solutions','restoration','maintenance','safety'];
+const tabs = document.querySelectorAll('.srv-tab');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 140) current = id;
+  });
+  tabs.forEach(t => {
+    t.classList.toggle('active', t.getAttribute('href') === '#' + current);
+  });
+});
+</script>
 </body>
 </html>

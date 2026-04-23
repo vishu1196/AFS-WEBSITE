@@ -14,8 +14,8 @@
     }
     .srv-tabs::-webkit-scrollbar { height: 0; }
     .srv-tab {
-      padding: 14px 16px; white-space: nowrap;
-      font-size: 0.82rem; font-weight: 600; color: var(--muted);
+      padding: 16px 20px; white-space: nowrap;
+      font-size: 0.88rem; font-weight: 600; color: var(--muted);
       border-bottom: 3px solid transparent; margin-bottom: -2px;
       transition: all 0.22s; cursor: pointer; text-decoration: none; display: block;
     }
@@ -31,7 +31,10 @@
     .sblock-inner.flip { direction: rtl; }
     .sblock-inner.flip > * { direction: ltr; }
 
-    .sblock-num { font-family: 'Oswald', sans-serif; font-size: 5rem; font-weight: 700; color: var(--border); line-height: 1; margin-bottom: -12px; display: block; }
+    .sblock-num {
+      font-family: 'Oswald', sans-serif; font-size: 5rem; font-weight: 700;
+      color: var(--border); line-height: 1; margin-bottom: -12px; display: block;
+    }
     .sblock-text h2 { font-family: 'Oswald', sans-serif; font-size: clamp(2rem,4vw,2.8rem); font-weight: 700; text-transform: uppercase; color: var(--navy); line-height: 1.05; }
     .sblock-text h2 span { color: var(--red); }
     .sblock-divider { width: 48px; height: 3px; background: var(--red); margin: 14px 0 20px; border-radius: 2px; }
@@ -39,44 +42,61 @@
 
     /* Feature List */
     .feat-list { list-style: none; margin: 20px 0 28px; }
-    .feat-list li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; color: var(--text); }
+    .feat-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; color: var(--text);
+    }
     .feat-list li:last-child { border-bottom: none; }
     .feat-check { color: var(--red); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
     /* Methods Pills */
     .method-tags { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 28px; }
-    .method-tag { background: white; border: 2px solid var(--border); color: var(--navy); padding: 9px 18px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; transition: all 0.2s; }
+    .method-tag {
+      background: white; border: 2px solid var(--border); color: var(--navy);
+      padding: 9px 18px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;
+      transition: all 0.2s;
+    }
     .method-tag:hover { border-color: var(--red); color: var(--red); background: #fff5f5; }
 
-    /* Spec boxes */
-    .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0 28px; }
-    .spec-box { background: var(--navy); border-radius: 8px; padding: 16px 18px; }
-    .spec-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #6a8aa5; margin-bottom: 4px; }
-    .spec-val { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--red); }
-    .spec-desc { font-size: 0.8rem; color: #9ab8d0; margin-top: 2px; }
-
     /* Image side */
-    .sblock-image { border-radius: 14px; overflow: hidden; height: 400px; background: linear-gradient(135deg, var(--navy), var(--steel)); display: flex; align-items: center; justify-content: center; font-size: 5rem; box-shadow: var(--shadow-md); position: relative; }
+    .sblock-image {
+      border-radius: 14px; overflow: hidden; height: 400px;
+      background: linear-gradient(135deg, var(--navy), var(--steel));
+      display: flex; align-items: center; justify-content: center; font-size: 5rem;
+      box-shadow: var(--shadow-md); position: relative;
+    }
     .sblock-image img { width: 100%; height: 100%; object-fit: cover; }
 
     /* Access grid */
     .access-products { max-width: 1200px; margin: 48px auto 0; }
     .access-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-    .access-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.28s; }
+    .access-card {
+      background: white; border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; transition: all 0.28s;
+    }
     .access-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-    .ac-img { height: 155px; background: linear-gradient(135deg, var(--navy-mid), var(--steel)); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+    .ac-img {
+      height: 155px; background: linear-gradient(135deg, var(--navy-mid), var(--steel));
+      display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
+    }
     .ac-img img { width: 100%; height: 100%; object-fit: cover; }
     .ac-body { padding: 16px; }
     .ac-body h4 { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; text-transform: uppercase; color: var(--navy); }
 
     /* Objectives */
     .obj-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 20px 0 28px; }
-    .obj-item { background: var(--light); border-radius: 8px; padding: 18px; border-left: 3px solid var(--red); }
+    .obj-item {
+      background: var(--light); border-radius: 8px; padding: 18px;
+      border-left: 3px solid var(--red);
+    }
     .obj-num { font-family: 'Oswald', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--red); line-height: 1; margin-bottom: 8px; }
     .obj-text { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
 
     /* Callout box */
-    .callout { background: var(--navy); color: white; border-radius: 10px; padding: 22px 24px; margin: 20px 0 28px; display: flex; gap: 16px; align-items: flex-start; }
+    .callout {
+      background: var(--navy); color: white; border-radius: 10px; padding: 22px 24px;
+      margin: 20px 0 28px; display: flex; gap: 16px; align-items: flex-start;
+    }
     .callout-icon { font-size: 1.6rem; flex-shrink: 0; }
     .callout h4 { font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 600; text-transform: uppercase; margin-bottom: 4px; }
     .callout p { font-size: 0.9rem; color: #9ab8d0; line-height: 1.6; }
@@ -86,22 +106,74 @@
     .srv-cta h2 { font-family: 'Oswald', sans-serif; font-size: clamp(2rem,4vw,2.8rem); font-weight: 700; color: white; text-transform: uppercase; margin-bottom: 14px; }
     .srv-cta p { color: rgba(255,255,255,0.82); font-size: 1.05rem; margin-bottom: 30px; }
 
+    /* ===== TYPES SECTION ===== */
+    .types-section {
+      max-width: 1200px; margin: 56px auto 0; padding: 0 0 8px;
+    }
+    .types-heading {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 28px;
+    }
+    .types-heading::before {
+      content: ''; display: block; width: 4px; height: 28px;
+      background: var(--red); border-radius: 2px; flex-shrink: 0;
+    }
+    .types-heading h3 {
+      font-family: 'Oswald', sans-serif; font-size: 1.3rem; font-weight: 700;
+      text-transform: uppercase; color: var(--navy); letter-spacing: 0.04em;
+    }
+    .types-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+    }
+    .type-card {
+      background: white; border: 1px solid var(--border); border-radius: 12px;
+      overflow: hidden; transition: all 0.28s; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .service-block:nth-child(odd) .type-card { background: var(--light); }
+    .service-block:nth-child(even) .type-card { background: white; }
+    .type-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15,32,68,0.13); border-color: rgba(192,39,45,0.25); }
+    .type-img {
+      height: 180px; overflow: hidden; position: relative;
+      background: linear-gradient(135deg, var(--navy), var(--steel));
+      display: flex; align-items: center; justify-content: center; font-size: 3rem;
+    }
+    .type-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s; }
+    .type-card:hover .type-img img { transform: scale(1.05); }
+    .type-img-label {
+      position: absolute; bottom: 10px; left: 10px;
+      background: var(--red); color: white;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 4px;
+    }
+    .type-body { padding: 18px 20px 22px; }
+    .type-body h4 {
+      font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 600;
+      text-transform: uppercase; color: var(--navy); margin-bottom: 8px; letter-spacing: 0.02em;
+    }
+    .type-body p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+    .type-body ul { list-style: none; margin-top: 10px; }
+    .type-body ul li {
+      font-size: 0.85rem; color: var(--text); padding: 5px 0;
+      border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 8px;
+    }
+    .type-body ul li:last-child { border-bottom: none; }
+    .type-body ul li::before { content: '→'; color: var(--red); font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; }
+
     @media (max-width: 900px) {
       .sblock-inner, .sblock-inner.flip { grid-template-columns: 1fr; direction: ltr; }
       .access-grid { grid-template-columns: 1fr 1fr; }
       .obj-grid { grid-template-columns: 1fr; }
-      .spec-grid { grid-template-columns: 1fr 1fr; }
+      .types-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 600px) {
       .access-grid { grid-template-columns: 1fr; }
-      .spec-grid { grid-template-columns: 1fr; }
+      .types-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
 <div class="topbar">
-  <a href="tel:8369803028">8369 803 028</a><br/><a href="tel:9591742073">9591 742 073</a><br/><a href="tel:9619634159">9619 634 159 </a>
+  <a href="tel:8369803028">📞 8369 803 028 / 9591742073</a>
   <a href="mailto:activefacadesales@gmail.com">✉️ activefacadesales@gmail.com</a>
   <a href="contact.html">📋 Free Site Survey</a>
 </div>
@@ -122,377 +194,409 @@
 <div class="page-header">
   <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span>Services</span></div>
   <h1>Our <span>Services</span></h1>
-  <p>Comprehensive facade solutions — from BMU systems and rope access to cleaning, restoration, and safety</p>
+  <p>Comprehensive facade solutions — from cleaning to access systems to safety audits</p>
 </div>
 
 <!-- STICKY TABS -->
 <div class="srv-tabs-wrap">
   <div class="srv-tabs">
-    <a href="#Twin-track-car-bmu-system" class="srv-tab">🏗️ Twin Track BMU</a>
-    <a href="#monorail-system" class="srv-tab">🛤️ Monorail</a>
-    <a href="#power-suspended-platforms" class="srv-tab">⚡ Suspended Platforms</a>
-    <a href="#aerial-work-platform" class="srv-tab">🚁 Aerial / Scaffold</a>
-    <a href="#davit-jib-system" class="srv-tab">🔩 Davit JIB</a>
-    <a href="#Facade-cleaning" class="srv-tab active">🪣 Cleaning</a>
+    <a href="#facade-cleaning" class="srv-tab active">🪣 Cleaning</a>
     <a href="#spiderman" class="srv-tab">🧗 Spiderman</a>
     <a href="#access-solutions" class="srv-tab">🏗️ Access</a>
     <a href="#restoration" class="srv-tab">🔧 Restoration</a>
     <a href="#maintenance" class="srv-tab">🔩 Maintenance</a>
-    <a href="#Brackets" class="srv-tab">🔩 Register Brackets</a>
-   
+    <a href="#safety" class="srv-tab">🦺 Safety</a>
   </div>
 </div>
 
-
-<!-- ══ 01. ROOF CAR BMU ══ -->
-<div class="service-block" id="Twin-track-car-bmu-system">
+<!-- 1. FACADE CLEANING -->
+<div class="service-block" id="facade-cleaning">
   <div class="sblock-inner">
     <div class="sblock-text reveal">
       <span class="sblock-num">01</span>
-      <div class="section-eyebrow">Access System</div>
-      <h2>Twin Track <span>BMU System</span></h2>
-      <div class="sblock-divider"></div>
-      <p>These are customized building maintenance units, designed for building where an extensive outreach is required; the BMU Cradle Roof machine can be stationary or traversing on concrete path or on steel tracks depending on the project. A Facade Access BMU Cradle is suspended from the Roof machine jib arm that is moved up , down and sideways. TASS offers wide range of Facade Access BMU Cradle Roof Machines such as Trackless BMU Cradle Roof Machines, Twin track BMU Cradle Roof Machines, Telescopic BMU Cradle Roof Machines, Parapet mounted BMU Cradle Roof Machines and custom designed Facade Access BMU Cradle Roof Machines to suit the architectural & structural requirements.</p>
-      <ul class="feat-list">
-        <li><span class="feat-check">✓</span> Custom roof car designed to building geometry and roof structure</li>
-        <li><span class="feat-check">✓</span> Precision track systems for smooth horizontal movement</li>
-        <li><span class="feat-check">✓</span> In-house factory fabrication with full quality control</li>
-        <li><span class="feat-check">✓</span> Electrically powered hoisting for safe, efficient operation</li>
-        <li><span class="feat-check">✓</span> Complete installation, load testing and commissioning</li>
-        <li><span class="feat-check">✓</span> Ongoing inspection, servicing and emergency call-out support</li>
-      </ul>
-      <div class="spec-grid">
-        <div class="spec-box"><div class="spec-label">Capacity</div><div class="spec-val">250–500 kg</div><div class="spec-desc">Platform load rating</div></div>
-        <div class="spec-box"><div class="spec-label">Height Range</div><div class="spec-val">Any Height</div><div class="spec-desc">Suitable for all high-rises</div></div>
-      </div>
-      <a href="contact.html" class="btn btn-primary">Request a Free Site Survey <span class="arrow">→</span></a>
-    </div>
-    <div class="sblock-image reveal reveal-delay-2">
-      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Davit_JIB_System.png" loading="lazy" alt="Roof Car BMU System" onerror="this.parentElement.innerHTML='🏗️'"/>
-    </div>
-  </div>
-</div>
-
-
-<!-- ══ 02. MONORAIL SYSTEM ══ -->
-<div class="service-block" id="monorail-system">
-  <div class="sblock-inner flip">
-    <div class="sblock-text reveal">
-      <span class="sblock-num">02</span>
-      <div class="section-eyebrow">Access System</div>
-      <h2>Monorail <span>System</span></h2>
-      <div class="sblock-divider"></div>
-      <p>Monorail systems use an overhead track fixed to the building structure to allow a suspended cradle to traverse horizontally with precision. Ideal for buildings where a traditional roof car is not feasible — such as podium levels, irregular rooflines, or cantilevered facades.</p>
-      <p>Each system is custom-designed to the specific profile of your building, ensuring complete facade coverage in the most efficient way possible.</p>
-      <ul class="feat-list">
-        <li><span class="feat-check">✓</span> Custom monorail track design for building-specific geometry</li>
-        <li><span class="feat-check">✓</span> Smooth motorised horizontal traverse along fixed overhead track</li>
-        <li><span class="feat-check">✓</span> Secure anchoring with safety-focused structural connections</li>
-        <li><span class="feat-check">✓</span> Compatible with solo and two-man suspended cradles</li>
-        <li><span class="feat-check">✓</span> Suitable for podium facades, irregular setbacks and stepped profiles</li>
-        <li><span class="feat-check">✓</span> End-to-end service: installation, inspection and annual maintenance</li>
-      </ul>
-      <div class="method-tags">
-        <span class="method-tag">Motorised Traverse</span>
-        <span class="method-tag">Custom Track Design</span>
-        <span class="method-tag">Podium Facades</span>
-        <span class="method-tag">Safe Anchoring</span>
-        <span class="method-tag">H-Beam</span>
-        <span class="method-tag">Aluminium Alloy C-130</span>
-      </div>
-      <a href="contact.html" class="btn btn-primary">Enquire About Monorail <span class="arrow">→</span></a>
-    </div>
-    <div class="sblock-image reveal reveal-delay-2">
-      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Monorail_System.png" loading="lazy" alt="Monorail System" onerror="this.parentElement.innerHTML='🛤️'"/>
-    </div>
-  </div>
-  <div class="access-products">
-      <div class="access-grid">
-        <div class="access-card reveal reveal-delay-1">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/cradle.png" loading="lazy" alt="BMU Trolley" onerror="this.parentElement.innerHTML='🏗️'"/></div>
-          <div class="ac-body"><h4>Motorised Traverse</h4></div>
-        </div>
-        <div class="access-card reveal reveal-delay-2">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/cradle.png" loading="lazy" alt="Solo Cradle" onerror="this.parentElement.innerHTML='🪜'"/></div>
-          <div class="ac-body"><h4>Custom Track Design</h4></div>
-        </div>
-        <div class="access-card reveal reveal-delay-3">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/cradle.png" loading="lazy" alt="Two Man Power Cradle" onerror="this.parentElement.innerHTML='⚙️'"/></div>
-          <div class="ac-body"><h4>Podium Facades</h4></div>
-        </div>
-        <div class="access-card reveal reveal-delay-1">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Davit_JIB_System.png" loading="lazy" alt="Motorised Davit" onerror="this.parentElement.innerHTML='🔩'"/></div>
-          <div class="ac-body"><h4>Safe Anchoring</h4></div>
-        </div>
-        <div class="access-card reveal reveal-delay-2">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Davit_JIB_System.png" loading="lazy" alt="Parapet Davit" onerror="this.parentElement.innerHTML='📐'"/></div>
-          <div class="ac-body"><h4>H-Beam</h4></div>
-        </div>
-        <div class="access-card reveal reveal-delay-3">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Davit_JIB_System.png" loading="lazy" alt="Roof Davit" onerror="this.parentElement.innerHTML='🏠'"/></div>
-          <div class="ac-body"><h4>Aluminium Alloy C-130</h4></div>
-        </div>
-      </div>
-    </div>
-</div>
-
-
-<!-- ══ 03. POWER SUSPENDED PLATFORMS ══ -->
-<div class="service-block" id="power-suspended-platforms">
-  <div class="sblock-inner">
-    <div class="sblock-text reveal">
-      <span class="sblock-num">03</span>
-      <div class="section-eyebrow">Platform System</div>
-      <h2>Power Suspended <span>Platforms</span></h2>
-      <div class="sblock-divider"></div>
-      <p>Electrically powered suspended work platforms (motorised cradles) hang from a roof-mounted suspension system. Operators control vertical movement using on-board controls, allowing safe and efficient access to any section of a facade.</p>
-      <p>We supply solo (single-person) and two-man cradle variants, both designed and tested for safe at-height operations on high-rise buildings.</p>
-      <ul class="feat-list">
-        <li><span class="feat-check">✓</span> Electrically powered — smooth, controlled descent and ascent</li>
-        <li><span class="feat-check">✓</span> Fail-safe braking and overload protection built in</li>
-        <li><span class="feat-check">✓</span> Available in solo and two-man configurations</li>
-        <li><span class="feat-check">✓</span> Compact and easy to deploy and relocate</li>
-        <li><span class="feat-check">✓</span> Used for cleaning, waterproofing, glass replacement and painting</li>
-        <li><span class="feat-check">✓</span> Full supply, installation and commissioning included</li>
-      </ul>
-      <div class="spec-grid">
-        <div class="spec-box"><div class="spec-label">Configuration</div><div class="spec-val">Solo</div><div class="spec-desc">One Man Cradle</div></div>
-        <div class="spec-box"><div class="spec-label">Configuration</div><div class="spec-val">2-Man</div><div class="spec-desc">Two Man Cradle</div></div>
-        <div class="spec-box"><div class="spec-label">Drive</div><div class="spec-val">Electric</div><div class="spec-desc">Smooth powered operation</div></div>
-        <div class="spec-box"><div class="spec-label">Rotation</div><div class="spec-val">360°</div><div class="spec-desc">Total Rotation</div></div>
-      </div>
-      <a href="contact.html" class="btn btn-primary">Request This Service <span class="arrow">→</span></a>
-    </div>
-    <div class="sblock-image reveal reveal-delay-2">
-      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/cradle.png" loading="lazy" alt="Power Suspended Platform" onerror="this.parentElement.innerHTML='⚡'"/>
-    </div>
-  </div>
-</div>
-
-
-<!-- ══ 04. AERIAL WORK PLATFORM & SCAFFOLD ══ -->
-<div class="service-block" id="aerial-work-platform">
-  <div class="sblock-inner flip">
-    <div class="sblock-text reveal">
-      <span class="sblock-num">04</span>
-      <div class="section-eyebrow">Elevated Access</div>
-      <h2>Aerial Work Platform <span>&amp; Scaffold</span></h2>
-      <div class="sblock-divider"></div>
-      <p>Aerial work platforms (AWPs) provide safe, self-contained elevated access for maintenance, installation, and inspection tasks at lower to mid-range heights. Combined with aluminium (AI) scaffold systems, these offer the most versatile and rapidly deployable access solution.</p>
-      <p>Our systems are designed for ease of movement around a site while maintaining rigorous safety standards — no permanent structural modifications required.</p>
-      <ul class="feat-list">
-        <li><span class="feat-check">✓</span> Rapid deployment — no permanent installation required</li>
-        <li><span class="feat-check">✓</span> Aluminium scaffold for light, adjustable elevated platforms</li>
-        <li><span class="feat-check">✓</span> Ideal for podiums, lower facades and internal atrium maintenance</li>
-        <li><span class="feat-check">✓</span> Suitable for glass cleaning, silicone pasting and minor repairs</li>
-        <li><span class="feat-check">✓</span> Operated by trained, certified technicians</li>
-        <li><span class="feat-check">✓</span> Safe load ratings and anti-slip platforms as standard</li>
-      </ul>
-      <div class="method-tags">
-        <span class="method-tag">Rapid Deployment</span>
-        <span class="method-tag">Aluminium Scaffold</span>
-        <span class="method-tag">No Permanent Install</span>
-        <span class="method-tag">Podium Access</span>
-      </div>
-      <a href="contact.html" class="btn btn-primary">Enquire About This System <span class="arrow">→</span></a>
-    </div>
-    <div class="sblock-image reveal reveal-delay-2">
-      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Scaffolding.png" loading="lazy" alt="Aerial Work Platform" onerror="this.parentElement.innerHTML='🚁'"/>
-    </div>
-  </div>
-</div>
-
-
-<!-- ══ 05. DAVIT JIB SYSTEM ══ -->
-<div class="service-block" id="davit-jib-system">
-  <div class="sblock-inner">
-    <div class="sblock-text reveal">
-      <span class="sblock-num">05</span>
-      <div class="section-eyebrow">Access System</div>
-      <h2>Davit <span>JIB System</span></h2>
-      <div class="sblock-divider"></div>
-      <p>Davit jib systems provide localised facade access by suspending a cradle or rope access operator from a fixed jib arm. Installed at intervals around the roof parapet or floor slab, they offer a flexible, cost-effective alternative to a full roof car BMU system.</p>
-      <p>We supply motorised davits, parapet davits, and roof davits — all custom-sized to the building's structural requirements.</p>
-      <ul class="feat-list">
-        <li><span class="feat-check">✓</span> Floor-mounted base with strong, reliable structural anchoring</li>
-        <li><span class="feat-check">✓</span> Motorised and manual variants available</li>
-        <li><span class="feat-check">✓</span> Easy rotation to cover multiple facade panels per installation point</li>
-        <li><span class="feat-check">✓</span> Suitable for buildings where a full BMU is not viable</li>
-        <li><span class="feat-check">✓</span> Full installation, load testing and certification included</li>
-        <li><span class="feat-check">✓</span> Annual inspection and maintenance contracts available</li>
-      </ul>
-      <div class="spec-grid">
-        <div class="spec-box"><div class="spec-label">Types</div><div class="spec-val">Motorised</div><div class="spec-desc">Description & Photo</div></div>
-        <div class="spec-box"><div class="spec-label">Types</div><div class="spec-val">Parapet</div><div class="spec-desc">Description & Photo</div></div>
-        <div class="spec-box"><div class="spec-label">Types</div><div class="spec-val">Roof</div><div class="spec-desc">Description & Photo </div></div>
-        <div class="spec-box"><div class="spec-label">Operation</div><div class="spec-val">360°</div><div class="spec-desc">Full rotation coverage</div></div>
-      </div>
-      <a href="contact.html" class="btn btn-primary">Request a Davit System <span class="arrow">→</span></a>
-    </div>
-    <div class="sblock-image reveal reveal-delay-2">
-      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Davit_JIB_System.png" loading="lazy" alt="Davit JIB System" onerror="this.parentElement.innerHTML='🔩'"/>
-    </div>
-  </div>
-</div>
-
-
-<!-- ══ 06. FACADE CLEANING ══ -->
-<div class="service-block" id="Facade-cleaning">
-  <div class="sblock-inner flip">
-    <div class="sblock-text reveal">
-      <span class="sblock-num">06</span>
-      <div class="section-eyebrow">Cleaning Service</div>
+      <div class="section-eyebrow">Service</div>
       <h2>Facade <span>Cleaning</span></h2>
       <div class="sblock-divider"></div>
-      <p>A clean building presents a more hospitable front — and a more attractive real estate prospect. Beyond aesthetics, facade cleaning removes damaging pollutants (Sulphur &amp; Nitrogen oxides) that accelerate facade deterioration.</p>
       <p>We undertake facade cleaning contracts for high-performance buildings with glass facades or structural glazing. Our trained teams restore building exteriors to pristine condition using proven, safe methods.</p>
       <div class="method-tags">
         <span class="method-tag">💧 Water Soaking</span>
-        <span class="method-tag">🔫 Jet Pressure Washing</span>
+        <span class="method-tag">🔫 Pressure Washing</span>
         <span class="method-tag">🧪 Chemical Cleaning</span>
         <span class="method-tag">♨️ Steam Cleaning</span>
       </div>
+      <a href="contact.html" class="btn btn-primary">Request This Service <span class="arrow">→</span></a>
+    </div>
+    <div class="sblock-image reveal reveal-delay-2">
+      <img src="https://vishu1196.github.io/static/Facade_cleaning.jpeg" loading="lazy" alt="Facade Cleaning" onerror="this.parentElement.innerHTML='🪣'"/>
+    </div>
+  </div>
+
+  <!-- TYPES: FACADE CLEANING -->
+  <div class="types-section">
+    <div class="types-heading"><h3>Types of Facade Cleaning</h3></div>
+    <div class="types-grid">
+
+      <div class="type-card reveal reveal-delay-1">
+        <div class="type-img">
+          <img src="images/cleaning-water-soaking.jpg" alt="Water Soaking" onerror="this.style.display='none';this.parentElement.innerHTML='💧'"/>
+          <span class="type-img-label">Method 01</span>
+        </div>
+        <div class="type-body">
+          <h4>Water Soaking</h4>
+          <p>A gentle, chemical-free method ideal for lightly soiled facades. Purified water is applied at low pressure to dissolve surface dust and grime without damaging coatings or seals.</p>
+          <ul>
+            <li>Safe for all glass and glazing types</li>
+            <li>No chemicals — eco-friendly process</li>
+            <li>Ideal for regular maintenance cycles</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="type-card reveal reveal-delay-2">
+        <div class="type-img">
+          <img src="images/cleaning-pressure-washing.jpg" alt="Pressure Washing" onerror="this.style.display='none';this.parentElement.innerHTML='🔫'"/>
+          <span class="type-img-label">Method 02</span>
+        </div>
+        <div class="type-body">
+          <h4>Pressure Washing</h4>
+          <p>High-pressure water jets remove stubborn stains, bird droppings, algae, and deeply embedded dirt from concrete, stone, and cladding surfaces quickly and efficiently.</p>
+          <ul>
+            <li>Adjustable pressure for different surfaces</li>
+            <li>Hot and cold water options available</li>
+            <li>Ideal for heavily soiled exteriors</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="type-card reveal reveal-delay-3">
+        <div class="type-img">
+          <img src="images/cleaning-chemical.jpg" alt="Chemical Cleaning" onerror="this.style.display='none';this.parentElement.innerHTML='🧪'"/>
+          <span class="type-img-label">Method 03</span>
+        </div>
+        <div class="type-body">
+          <h4>Chemical Cleaning</h4>
+          <p>Specially formulated, surface-safe agents dissolve rust stains, efflorescence, oxidation, and biological growth on stone, brick, and metal cladding facades.</p>
+          <ul>
+            <li>pH-neutral &amp; surface-specific solutions</li>
+            <li>Effective on rust, moss &amp; mineral deposits</li>
+            <li>Safe neutralisation and rinse-off process</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="type-card reveal reveal-delay-1">
+        <div class="type-img">
+          <img src="images/cleaning-steam.jpg" alt="Steam Cleaning" onerror="this.style.display='none';this.parentElement.innerHTML='♨️'"/>
+          <span class="type-img-label">Method 04</span>
+        </div>
+        <div class="type-body">
+          <h4>Steam Cleaning</h4>
+          <p>Superheated steam penetrates pores in stone and masonry to sanitise and deep-clean without abrasion — ideal for heritage buildings and sensitive architectural surfaces.</p>
+          <ul>
+            <li>Chemical-free deep sanitisation</li>
+            <li>Preserves surface integrity</li>
+            <li>Best for heritage &amp; ornamental facades</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:28px auto 0;text-align:right;padding-bottom:8px;">
+    <a href="contact.html" class="btn btn-outline-red" style="display:inline-flex;align-items:center;gap:8px;">Enquire About Facade Cleaning <span>→</span></a>
+  </div>
+</div>
+
+<!-- 2. SPIDERMAN -->
+<div class="service-block" id="spiderman">
+  <div class="sblock-inner flip">
+    <div class="sblock-text reveal">
+      <span class="sblock-num">02</span>
+      <div class="section-eyebrow">Service</div>
+      <h2>Spiderman <span>Service</span></h2>
+      <div class="sblock-divider"></div>
+      <p>Low capital cost, low cleaning cost, safe and operative-friendly rope access for buildings of any height. Operators are certified and use premium imported gear.</p>
       <ul class="feat-list">
-        <li><span class="feat-check">✓</span> Glass, ACP, stone, GRC and composite cladding all covered</li>
-        <li><span class="feat-check">✓</span> Specialist chemical selection for each facade type</li>
-        <li><span class="feat-check">✓</span> Safe access using BMU, davit, rope or scaffold as required</li>
-        <li><span class="feat-check">✓</span> One-off deep cleans and ongoing AMC contracts available</li>
-        <li><span class="feat-check">✓</span> Minimum disruption to building operations</li>
+        <li><span class="feat-check">✓</span> Fail Safe Capability</li>
+        <li><span class="feat-check">✓</span> One is to Two Pulley Ratio</li>
+        <li><span class="feat-check">✓</span> One Man Operation</li>
+        <li><span class="feat-check">✓</span> Portable and Light Weight</li>
+        <li><span class="feat-check">✓</span> Imported Kits from UK / France</li>
+        <li><span class="feat-check">✓</span> Certified Kermantle Ropes</li>
       </ul>
       <a href="contact.html" class="btn btn-primary">Request This Service <span class="arrow">→</span></a>
     </div>
     <div class="sblock-image reveal reveal-delay-2">
-      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Facade_cleaning.jpeg" loading="lazy" alt="Facade Cleaning" onerror="this.parentElement.innerHTML='🪣'"/>
+      <img src="https://vishu1196.github.io/static/sperderman.jpeg" loading="lazy" alt="Spiderman Rope Access" onerror="this.parentElement.innerHTML='🧗'"/>
     </div>
   </div>
 </div>
 
-
-<!-- ══ 07. SPIDERMAN ══ -->
-<div class="service-block" id="spiderman">
-  <div class="sblock-inner">
-    <div class="sblock-text reveal">
-      <span class="sblock-num">07</span>
-      <div class="section-eyebrow">Rope Access</div>
-      <h2>Spiderman <span>Service</span></h2>
-      <div class="sblock-divider"></div>
-      <p>Our rope access service uses industrial-grade Kermantle ropes and imported access kits (UK / France) to allow certified operators to descend building facades with complete safety and precision — at a fraction of the cost of scaffolding or BMU deployment.</p>
-      <p>Ideal for one-off repairs, inspections, silicone pasting and targeted cleaning where a full access system is not required.</p>
-      <ul class="feat-list">
-        <li><span class="feat-check">✓</span> Fail Safe Capability — independent safety line at all times</li>
-        <li><span class="feat-check">✓</span> One-to-Two Pulley Ratio for smooth, controlled descent</li>
-        <li><span class="feat-check">✓</span> One Man Operation — minimal crew, maximum efficiency</li>
-        <li><span class="feat-check">✓</span> Portable and Lightweight — no roof equipment needed</li>
-        <li><span class="feat-check">✓</span> Imported Kits from UK / France — highest safety standards</li>
-        <li><span class="feat-check">✓</span> Certified Kermantle Ropes — parachute grade, 1 tonne rated</li>
-      </ul>
-      <div class="spec-grid">
-        <div class="spec-box"><div class="spec-label">Rope Rating</div><div class="spec-val">1 Tonne</div><div class="spec-desc">Parachute grade Kermantle</div></div>
-        <div class="spec-box"><div class="spec-label">Kit Origin</div><div class="spec-val">UK / France</div><div class="spec-desc">Certified imported gear</div></div>
-      </div>
-      <a href="contact.html" class="btn btn-primary">Book a Rope Access Team <span class="arrow">→</span></a>
-    </div>
-    <div class="sblock-image reveal reveal-delay-2">
-      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Spiderman_Service.jpeg" loading="lazy" alt="Spiderman Rope Access" onerror="this.parentElement.innerHTML='🧗'"/>
-    </div>
-  </div>
-</div>
-
-
-<!-- ══ 08. ACCESS SOLUTIONS ══ -->
+<!-- 3. ACCESS SOLUTIONS -->
 <div class="service-block" id="access-solutions">
   <div class="container">
     <div class="text-center reveal">
-      <span class="sblock-num" style="display:block;text-align:center;">08</span>
-      <div class="section-eyebrow" style="justify-content:center;">Equipment Supply</div>
+      <span class="sblock-num" style="display:block;text-align:center;">03</span>
+      <div class="section-eyebrow" style="justify-content:center;">Service</div>
       <h2 class="section-title">Access <span>Solutions</span></h2>
-      <p class="section-sub">We supply, install, and maintain the full range of facade access equipment — from BMU trolleys to eyebolt anchor systems.</p>
+      <p class="section-sub">We supply, install, and maintain a complete range of building access systems for safe, efficient facade access at any height.</p>
     </div>
     <div class="access-products">
       <div class="access-grid">
-        <div class="access-card reveal reveal-delay-1">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/cradle.png" loading="lazy" alt="BMU Trolley" onerror="this.parentElement.innerHTML='🏗️'"/></div>
-          <div class="ac-body"><h4>BMU – Trolley System</h4></div>
-        </div>
-        <div class="access-card reveal reveal-delay-2">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/cradle.png" loading="lazy" alt="Solo Cradle" onerror="this.parentElement.innerHTML='🪜'"/></div>
-          <div class="ac-body"><h4>Solo Cradle</h4></div>
-        </div>
-        <div class="access-card reveal reveal-delay-3">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/cradle.png" loading="lazy" alt="Two Man Power Cradle" onerror="this.parentElement.innerHTML='⚙️'"/></div>
-          <div class="ac-body"><h4>Two Man Power Cradle</h4></div>
-        </div>
-        <div class="access-card reveal reveal-delay-1">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Davit_JIB_System.png" loading="lazy" alt="Motorised Davit" onerror="this.parentElement.innerHTML='🔩'"/></div>
-          <div class="ac-body"><h4>Motorised Davit</h4></div>
-        </div>
-        <div class="access-card reveal reveal-delay-2">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Davit_JIB_System.png" loading="lazy" alt="Parapet Davit" onerror="this.parentElement.innerHTML='📐'"/></div>
-          <div class="ac-body"><h4>Paraphet Davit</h4></div>
-        </div>
-        <div class="access-card reveal reveal-delay-3">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Davit_JIB_System.png" loading="lazy" alt="Roof Davit" onerror="this.parentElement.innerHTML='🏠'"/></div>
-          <div class="ac-body"><h4>Roof Davit</h4></div>
-        </div>
-        <div class="access-card reveal reveal-delay-1">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Davit_JIB_System.png" loading="lazy" alt="Prophet Jib" onerror="this.parentElement.innerHTML='📏'"/></div>
-          <div class="ac-body"><h4>Prophet JIB</h4></div>
-        </div>
-        <div class="access-card reveal reveal-delay-2">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Monorail_System.png" loading="lazy" alt="Monorail" onerror="this.parentElement.innerHTML='🛤️'"/></div>
-          <div class="ac-body"><h4>Monorail</h4></div>
-        </div>
-        <div class="access-card reveal reveal-delay-3">
-          <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Safety.jpeg" loading="lazy" alt="Eyebolt" onerror="this.parentElement.innerHTML='🔗'"/></div>
-          <div class="ac-body"><h4>Eyebolt &amp; Scaffold</h4></div>
-        </div>
+        <div class="access-card reveal reveal-delay-1"><div class="ac-img"><img src="https://vishu1196.github.io/static/cradle.png" loading="lazy" alt="BMU Trolley" onerror="this.parentElement.innerHTML='🏗️'"/></div><div class="ac-body"><h4>BMU – Trolley System</h4></div></div>
+        <div class="access-card reveal reveal-delay-2"><div class="ac-img"><img src="https://vishu1196.github.io/static/cradle.png" loading="lazy" alt="Solo Cradle" onerror="this.parentElement.innerHTML='🪜'"/></div><div class="ac-body"><h4>Solo Cradle</h4></div></div>
+        <div class="access-card reveal reveal-delay-3"><div class="ac-img"><img src="https://vishu1196.github.io/static/cradle.png" loading="lazy" alt="Power Cradle" onerror="this.parentElement.innerHTML='⚙️'"/></div><div class="ac-body"><h4>Two Man Power Cradle</h4></div></div>
+        <div class="access-card reveal reveal-delay-1"><div class="ac-img"><img src="https://vishu1196.github.io/static/Safety.jpeg" loading="lazy" alt="Motorised Davit" onerror="this.parentElement.innerHTML='🔩'"/></div><div class="ac-body"><h4>Motorised Davit</h4></div></div>
+        <div class="access-card reveal reveal-delay-2"><div class="ac-img"><img src="https://vishu1196.github.io/static/Safety.jpeg" loading="lazy" alt="Parapet Davit" onerror="this.parentElement.innerHTML='📐'"/></div><div class="ac-body"><h4>Parapet Davit</h4></div></div>
+        <div class="access-card reveal reveal-delay-3"><div class="ac-img"><img src="https://vishu1196.github.io/static/Safety.jpeg" loading="lazy" alt="Roof Davit" onerror="this.parentElement.innerHTML='🏠'"/></div><div class="ac-body"><h4>Roof Davit</h4></div></div>
+        <div class="access-card reveal reveal-delay-1"><div class="ac-img"><img src="https://vishu1196.github.io/static/Safety.jpeg" loading="lazy" alt="Prophet Jib" onerror="this.parentElement.innerHTML='📏'"/></div><div class="ac-body"><h4>Praphet Jib</h4></div></div>
+        <div class="access-card reveal reveal-delay-2"><div class="ac-img"><img src="https://vishu1196.github.io/static/Safety.jpeg" loading="lazy" alt="Monorail" onerror="this.parentElement.innerHTML='🛤️'"/></div><div class="ac-body"><h4>Monorail</h4></div></div>
+        <div class="access-card reveal reveal-delay-3"><div class="ac-img"><img src="https://vishu1196.github.io/static/Safety.jpeg" loading="lazy" alt="Eyebolt" onerror="this.parentElement.innerHTML='🔗'"/></div><div class="ac-body"><h4>Eyebolt &amp; Scaffold</h4></div></div>
       </div>
     </div>
-    <div class="text-center" style="margin-top:36px;">
-      <a href="contact.html" class="btn btn-primary">Enquire About Access Solutions <span class="arrow">→</span></a>
+    <!-- TYPES: MONORAIL SYSTEM -->
+    <div class="types-section" style="padding:0 24px;">
+      <div class="types-heading"><h3>Monorail System – Types</h3></div>
+      <div class="types-grid">
+
+        <div class="type-card reveal reveal-delay-1">
+          <div class="type-img">
+            <img src="images/monorail-straight.jpg" alt="Straight Monorail" onerror="this.style.display='none';this.parentElement.innerHTML='🛤️'"/>
+            <span class="type-img-label">Type 01</span>
+          </div>
+          <div class="type-body">
+            <h4>Straight Monorail Track</h4>
+            <p>A fixed overhead rail system installed along the roofline, allowing a suspended cradle or trolley to travel horizontally across the full width of a building facade for cleaning and maintenance work.</p>
+            <ul>
+              <li>Fixed to roof parapet or structural beam</li>
+              <li>Supports motorised or manual trolleys</li>
+              <li>Ideal for rectangular building profiles</li>
+              <li>Load capacity up to 500 kg</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="type-card reveal reveal-delay-2">
+          <div class="type-img">
+            <img src="images/monorail-curved.jpg" alt="Curved Monorail" onerror="this.style.display='none';this.parentElement.innerHTML='🔄'"/>
+            <span class="type-img-label">Type 02</span>
+          </div>
+          <div class="type-body">
+            <h4>Curved / Radius Monorail</h4>
+            <p>Custom-fabricated curved rail sections that follow the contour of circular or irregular building profiles, enabling continuous access around building corners and curved facades without re-rigging.</p>
+            <ul>
+              <li>Custom-bent to building curvature</li>
+              <li>Seamless corner &amp; radius transitions</li>
+              <li>Suitable for curved glass towers</li>
+              <li>Precision-engineered to site specifications</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="type-card reveal reveal-delay-3">
+          <div class="type-img">
+            <img src="images/monorail-telescopic.jpg" alt="Telescopic Monorail" onerror="this.style.display='none';this.parentElement.innerHTML='📡'"/>
+            <span class="type-img-label">Type 03</span>
+          </div>
+          <div class="type-body">
+            <h4>Telescopic / Extendable Monorail</h4>
+            <p>An extendable arm or outreach monorail that can be adjusted to reach facades with overhangs, podium setbacks, or architectural projections that a standard fixed rail cannot cover.</p>
+            <ul>
+              <li>Variable outreach — 1 m to 4 m+</li>
+              <li>Handles setbacks &amp; canopy overhangs</li>
+              <li>Folds flat when not in use</li>
+              <li>Motorised extension options available</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
     </div>
+
+    <!-- TYPES: DAVIT JIB SYSTEM -->
+    <div class="types-section" style="padding:0 24px;margin-top:48px;">
+      <div class="types-heading"><h3>Davit Jib System – Types</h3></div>
+      <div class="types-grid">
+
+        <div class="type-card reveal reveal-delay-1">
+          <div class="type-img">
+            <img src="images/davit-motorised.jpg" alt="Motorised Davit" onerror="this.style.display='none';this.parentElement.innerHTML='⚙️'"/>
+            <span class="type-img-label">Type 01</span>
+          </div>
+          <div class="type-body">
+            <h4>Motorised Davit</h4>
+            <p>An electrically powered jib arm mounted into a roof socket, used to swing a suspended cradle out over the building edge. Motorised operation allows precise positioning with minimal manual effort.</p>
+            <ul>
+              <li>Electric-powered swing &amp; outreach</li>
+              <li>Fits standard 76mm/100mm roof sockets</li>
+              <li>Safe load capacity up to 300 kg</li>
+              <li>Remote-controlled operation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="type-card reveal reveal-delay-2">
+          <div class="type-img">
+            <img src="images/davit-parapet.jpg" alt="Parapet Davit" onerror="this.style.display='none';this.parentElement.innerHTML='📐'"/>
+            <span class="type-img-label">Type 02</span>
+          </div>
+          <div class="type-body">
+            <h4>Parapet Davit</h4>
+            <p>Designed to clamp directly onto parapet walls without the need for embedded roof sockets — making it a practical solution for buildings where roof drilling or structural modifications are not permitted.</p>
+            <ul>
+              <li>No roof penetration required</li>
+              <li>Clamping mechanism for parapet walls</li>
+              <li>Quick installation &amp; relocation</li>
+              <li>Ideal for heritage &amp; retrofit projects</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="type-card reveal reveal-delay-3">
+          <div class="type-img">
+            <img src="images/davit-roof.jpg" alt="Roof Davit" onerror="this.style.display='none';this.parentElement.innerHTML='🏠'"/>
+            <span class="type-img-label">Type 03</span>
+          </div>
+          <div class="type-body">
+            <h4>Roof Davit</h4>
+            <p>A permanently installed davit base socket set into the roof structure, accepting a portable jib arm that can be moved between multiple socket positions around the building perimeter as needed.</p>
+            <ul>
+              <li>Permanent base — portable jib arm</li>
+              <li>Multiple socket positions per building</li>
+              <li>Stainless steel construction</li>
+              <li>Low visual impact when arm is removed</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="type-card reveal reveal-delay-1">
+          <div class="type-img">
+            <img src="images/davit-prophet-jib.jpg" alt="Prophet Jib" onerror="this.style.display='none';this.parentElement.innerHTML='📏'"/>
+            <span class="type-img-label">Type 04</span>
+          </div>
+          <div class="type-body">
+            <h4>Prophet Jib Arm</h4>
+            <p>A lightweight, manually operated jib arm with an adjustable outreach angle, used for buildings with complex setbacks or where different horizontal reach distances are needed at different levels.</p>
+            <ul>
+              <li>Adjustable outreach angle</li>
+              <li>Lightweight aluminium construction</li>
+              <li>Portable — relocates between sockets</li>
+              <li>Suitable for light-duty access tasks</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:36px;"><a href="contact.html" class="btn btn-primary">Enquire About Access Solutions <span class="arrow">→</span></a></div>
   </div>
 </div>
 
-
-<!-- ══ 09. RESTORATION ══ -->
+<!-- 4. RESTORATION -->
 <div class="service-block" id="restoration">
   <div class="sblock-inner">
     <div class="sblock-text reveal">
-      <span class="sblock-num">09</span>
-      <div class="section-eyebrow">Restoration</div>
+      <span class="sblock-num">04</span>
+      <div class="section-eyebrow">Service</div>
       <h2>Facade <span>Restoration</span></h2>
       <div class="sblock-divider"></div>
-      <p>While engaged in facade rectification work over an extensive period, we have observed several potential issues associated with substandard facade installation. Our bespoke restoration service addresses all these issues to restore your building's exterior and long-term integrity.</p>
+      <p>Over time, facades suffer from wear, environmental pollutants, and structural weakening. Our bespoke restoration service addresses all these issues to restore your building's exterior and long-term integrity.</p>
       <ul class="feat-list">
-        <li><span class="feat-check">✓</span> Water Leakage Testing — pressure method survey and diagnosis</li>
-        <li><span class="feat-check">✓</span> Waterproofing — silicon filling and weatherproof sealant application</li>
-        <li><span class="feat-check">✓</span> Facade Glass Unit Replacement — residential, commercial and industrial</li>
-        <li><span class="feat-check">✓</span> Stone Cladding — assessment, preparation, installation and finishing</li>
-        <li><span class="feat-check">✓</span> ACP panel repair and colour-matched restoration</li>
-        <li><span class="feat-check">✓</span> Structural glazing re-bonding and sealant renewal</li>
+        <li><span class="feat-check">✓</span> Water Leakage Testing</li>
+        <li><span class="feat-check">✓</span> Waterproofing – Silicon Filling</li>
+        <li><span class="feat-check">✓</span> Facade Glass Unit Replacement</li>
+        <li><span class="feat-check">✓</span> Stone Cladding</li>
       </ul>
-      <div class="method-tags">
-        <span class="method-tag">Silicone Pesting</span>
-        <span class="method-tag">Glass Replacement</span>
-        <span class="method-tag">Waterproofing</span>
-        <span class="method-tag">Stone Cladding</span>
-      </div>
-      <a href="contact.html" class="btn btn-primary">Request a Restoration Survey <span class="arrow">→</span></a>
+      <a href="contact.html" class="btn btn-primary">Request This Service <span class="arrow">→</span></a>
     </div>
     <div class="sblock-image reveal reveal-delay-2">
-      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/restoration.jpeg" loading="lazy" alt="Restoration" onerror="this.parentElement.innerHTML='🔧'"/>
+      <img src="https://vishu1196.github.io/static/restoration.jpeg" loading="lazy" alt="Restoration" onerror="this.parentElement.innerHTML='🔧'"/>
     </div>
+  </div>
+
+  <!-- TYPES: FACADE RESTORATION -->
+  <div class="types-section">
+    <div class="types-heading"><h3>Types of Facade Restoration</h3></div>
+    <div class="types-grid">
+
+      <div class="type-card reveal reveal-delay-1">
+        <div class="type-img">
+          <img src="images/restoration-leakage.jpg" alt="Water Leakage Testing" onerror="this.style.display='none';this.parentElement.innerHTML='💧'"/>
+          <span class="type-img-label">Type 01</span>
+        </div>
+        <div class="type-body">
+          <h4>Water Leakage Testing</h4>
+          <p>Systematic testing of glazing, joints, and seals using calibrated water spray and pressure methods to precisely identify the source of water ingress in building facades.</p>
+          <ul>
+            <li>AAMA &amp; ASTM standard test procedures</li>
+            <li>Localised leak source identification</li>
+            <li>Detailed diagnostic report provided</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="type-card reveal reveal-delay-2">
+        <div class="type-img">
+          <img src="images/restoration-waterproofing.jpg" alt="Waterproofing" onerror="this.style.display='none';this.parentElement.innerHTML='🛡️'"/>
+          <span class="type-img-label">Type 02</span>
+        </div>
+        <div class="type-body">
+          <h4>Waterproofing – Silicon Filling</h4>
+          <p>Application of high-performance structural silicone sealants to failed joints, expansion gaps, and perimeter seals — restoring watertight integrity to curtain walls and glazing systems.</p>
+          <ul>
+            <li>UV-resistant &amp; weather-grade silicone</li>
+            <li>Compatible with all glazing systems</li>
+            <li>Prevents future water ingress</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="type-card reveal reveal-delay-3">
+        <div class="type-img">
+          <img src="images/restoration-glass.jpg" alt="Glass Unit Replacement" onerror="this.style.display='none';this.parentElement.innerHTML='🪟'"/>
+          <span class="type-img-label">Type 03</span>
+        </div>
+        <div class="type-body">
+          <h4>Facade Glass Unit Replacement</h4>
+          <p>Safe removal and replacement of cracked, broken, or failed IGU (insulated glass units) at height using certified access equipment and specialist glazing techniques.</p>
+          <ul>
+            <li>Single &amp; double-glazed unit replacement</li>
+            <li>Carried out at any height safely</li>
+            <li>Minimal disruption to building occupants</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="type-card reveal reveal-delay-1">
+        <div class="type-img">
+          <img src="images/restoration-stone.jpg" alt="Stone Cladding" onerror="this.style.display='none';this.parentElement.innerHTML='🏛️'"/>
+          <span class="type-img-label">Type 04</span>
+        </div>
+        <div class="type-body">
+          <h4>Stone Cladding Restoration</h4>
+          <p>Repair, re-bonding, and re-sealing of natural stone and composite cladding panels that have become loose, cracked, or stained — restoring both safety and aesthetics.</p>
+          <ul>
+            <li>Crack repair &amp; panel re-bonding</li>
+            <li>Colour-matched stone treatment</li>
+            <li>Anti-stain &amp; protective sealing applied</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:28px auto 0;text-align:right;padding-bottom:8px;">
+    <a href="contact.html" class="btn btn-outline-red" style="display:inline-flex;align-items:center;gap:8px;">Enquire About Restoration <span>→</span></a>
   </div>
 </div>
 
-
-<!-- ══ 10. MAINTENANCE ══ -->
+<!-- 5. MAINTENANCE -->
 <div class="service-block" id="maintenance">
   <div class="sblock-inner flip">
     <div class="sblock-text reveal">
-      <span class="sblock-num">10</span>
-      <div class="section-eyebrow">Annual Contract</div>
+      <span class="sblock-num">05</span>
+      <div class="section-eyebrow">Service</div>
       <h2>Facade <span>Maintenance</span></h2>
       <div class="sblock-divider"></div>
       <p>Annual BMU maintenance contracts with monthly visits for inspection, testing, and commissioning. We inspect, service, and repair equipment to ensure safe operating conditions every time.</p>
@@ -500,7 +604,7 @@
         <span class="callout-icon">🚨</span>
         <div>
           <h4>Emergency Call-Out Service</h4>
-          <p>We deploy a technician on an urgent basis whenever system failure occurs — minimising your downtime and keeping your building operational.</p>
+          <p>We deploy a technician on an urgent basis whenever system failure occurs — minimising your downtime.</p>
         </div>
       </div>
       <div class="obj-grid">
@@ -511,46 +615,32 @@
       <a href="contact.html" class="btn btn-primary">Get a Maintenance Contract <span class="arrow">→</span></a>
     </div>
     <div class="sblock-image reveal reveal-delay-2">
-      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/BMU_Maintenaince.jpeg" loading="lazy" alt="Maintenance" onerror="this.parentElement.innerHTML='🔩'"/>
+      <img src="https://vishu1196.github.io/static/BMU Maintenaince.jpeg" loading="lazy" alt="Maintenance" onerror="this.parentElement.innerHTML='🔩'"/>
     </div>
   </div>
 </div>
 
-
-<!-- ══ 11. Floor Register Brackets ══ -->
-<div class="service-block" id="Brackets">
+<!-- 6. SAFETY -->
+<div class="service-block" id="safety">
   <div class="sblock-inner">
     <div class="sblock-text reveal">
-      <span class="sblock-num">11</span>
-      <div class="section-eyebrow">Floor Brackets</div>
-      <h2>Floor Register <span>Brackets</span></h2>
+      <span class="sblock-num">06</span>
+      <div class="section-eyebrow">Service</div>
+      <h2>Safety &amp; Facility <span>Management</span></h2>
       <div class="sblock-divider"></div>
-      <p>Comprehensive safety and facility management services — from free site surveys and risk assessments to BMU audits and pull-out testing, keeping your building fully compliant with occupational health and safety standards.</p>
+      <p>Comprehensive safety and facility management services — from free site surveys and risk assessments to BMU audits and pull-out testing, keeping your building fully compliant.</p>
       <ul class="feat-list">
         <li><span class="feat-check">✓</span> Free site survey &amp; consulting for work-at-height needs</li>
         <li><span class="feat-check">✓</span> Facade access risk assessments &amp; job safety analysis</li>
         <li><span class="feat-check">✓</span> Occupational health &amp; safety risk mitigation strategies</li>
         <li><span class="feat-check">✓</span> BMU condition reports &amp; maintenance audit</li>
         <li><span class="feat-check">✓</span> BMU Audit &amp; Pull-Out Testing</li>
-        <li><span class="feat-check">✓</span> Floor Register Brackets — supply, install and certification</li>
-      <li><span class="feat-check">✓</span> Performance specification &amp; client advice for refurbishment</li>
+        <li><span class="feat-check">✓</span> Performance specification &amp; client advice for refurbishment</li>
       </ul>
-      <div class="spec-grid">
-        <div class="spec-box"><div class="spec-label">Site Survey</div><div class="spec-val">100% Free</div><div class="spec-desc">No obligation assessment</div></div>
-        <div class="spec-box"><div class="spec-label">Response</div><div class="spec-val">24 / 7</div><div class="spec-desc">Emergency support available</div></div>
-      </div>
-      <a href="contact.html" class="btn btn-primary">Request a Free Safety Survey <span class="arrow">→</span></a>
+      <a href="contact.html" class="btn btn-primary">Request a Free Survey <span class="arrow">→</span></a>
     </div>
     <div class="sblock-image reveal reveal-delay-2">
-      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Safety.jpeg" loading="lazy" alt="Safety" onerror="this.parentElement.innerHTML='🦺'"/>
-    </div>
-  </div>
-</div>
-
-      <a href="contact.html" class="btn btn-primary">Request a Free Safety Survey <span class="arrow">→</span></a>
-    </div>
-    <div class="sblock-image reveal reveal-delay-2">
-      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Safety.jpeg" loading="lazy" alt="Safety" onerror="this.parentElement.innerHTML='🦺'"/>
+      <img src="https://vishu1196.github.io/static/Safety.jpeg" loading="lazy" alt="Safety" onerror="this.parentElement.innerHTML='🦺'"/>
     </div>
   </div>
 </div>
@@ -572,20 +662,8 @@
     <div class="footer-grid">
       <div class="footer-brand"><img src="images/logo.png" alt="AFS"/><p>Active Facade System — specialized facade access and maintenance solutions, Navi Mumbai.</p></div>
       <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Services</h4><ul>
-        <li><a href="#roof-car-bmu-system">Roof Car BMU</a></li>
-        <li><a href="#monorail-system">Monorail System</a></li>
-        <li><a href="#facade-cleaning">Facade Cleaning</a></li>
-        <li><a href="#spiderman">Spiderman Service</a></li>
-        <li><a href="#restoration">Restoration</a></li>
-        <li><a href="#maintenance">Maintenance</a></li>
-        <li><a href="#safety">Safety &amp; Mgmt</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Contact</h4>
-        <div class="fci"><span class="ico">📞</span><p><a href="tel:8369803028">8369 803 028</a><br/><a href="tel:9591742073">9591 742 073</a><br/><a href="tel:9619634159">9619 634 159 </a></p></div>
-        <div class="fci"><span class="ico">✉️</span><p><a href="mailto:activefacadesales@gmail.com">activefacadesales@gmail.com</a></p></div>
-        <div class="fci"><span class="ico">📍</span><p>Kharghar, Navi Mumbai – 410 210</p></div>
-      </div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="#facade-cleaning">Facade Cleaning</a></li><li><a href="#spiderman">Spiderman Service</a></li><li><a href="#access-solutions">Access Solutions</a></li><li><a href="#restoration">Restoration</a></li><li><a href="#maintenance">Maintenance</a></li><li><a href="#safety">Safety & Mgmt</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><div class="fci"><span class="ico">📞</span><p><a href="tel:8369803028">8369 803 028</a></p></div><div class="fci"><span class="ico">✉️</span><p><a href="mailto:activefacadesales@gmail.com">activefacadesales@gmail.com</a></p></div><div class="fci"><span class="ico">📍</span><p>Kharghar, Navi Mumbai – 410 210</p></div></div>
     </div>
     <div class="footer-bottom"><span>© 2025 Active Facade System. All rights reserved.</span><span>Made with ❤️ in Navi Mumbai</span></div>
   </div>
@@ -599,7 +677,8 @@
 
 <script src="js/main.js"></script>
 <script>
-const sections = ['roof-car-bmu-system','monorail-system','power-suspended-platforms','aerial-work-platform','davit-jib-system','facade-cleaning','spiderman','access-solutions','restoration','maintenance','safety'];
+// Active tab highlighting on scroll
+const sections = ['facade-cleaning','spiderman','access-solutions','restoration','maintenance','safety'];
 const tabs = document.querySelectorAll('.srv-tab');
 window.addEventListener('scroll', () => {
   let current = '';

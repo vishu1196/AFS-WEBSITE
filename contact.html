@@ -181,8 +181,8 @@
       <div class="form-card reveal reveal-delay-1">
         <h3>Send a Message</h3>
         <p>Fill in the form and we'll get back to you within 24 hours with a tailored response.</p>
-
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSehLp3nkCVBrl9vWRL5JZ5XPPTN0wj8nWCMDyPZ0Dz-TStPvQ/formResponse" method="POST" target="_blank">
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSehLp3nkCVBrl9vWRL5JZ5XPPTN0wj8nWCMDyPZ0Dz-TStPvQ/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)">
           <div class="form-row">
             <div class="form-group">
               <label>Full Name <span class="required-star">*</span></label>
@@ -279,21 +279,26 @@
 
 <script src="js/main.js"></script>
 <script>
-function updateCount(el) {
-  document.getElementById('charCount').textContent = el.value.length;
-}
 function handleSubmit(e) {
-  e.preventDefault();
-  const name = document.getElementById('fname').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  if (!name || !phone) { alert('Please fill in your name and phone number.'); return; }
+  // DO NOT prevent default (we want Google Form to submit)
+
   const msg = document.getElementById('successMsg');
+  const form = document.getElementById('contactForm');
+
+  // Show success message
   msg.style.display = 'block';
-  e.target.reset();
+
+  // Reset form
+  form.reset();
   document.getElementById('charCount').textContent = '0';
+
+  // Scroll to message
   msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  // Hide after 6 sec (optional)
   setTimeout(() => { msg.style.display = 'none'; }, 6000);
 }
 </script>
+
 </body>
 </html>

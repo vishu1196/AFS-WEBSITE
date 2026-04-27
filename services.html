@@ -131,6 +131,12 @@
     .type-feats li:last-child { border-bottom: none; }
     .type-feats .fc { color: var(--red); font-weight: 700; flex-shrink: 0; font-size: 0.76rem; margin-top: 2px; }
 
+    /* Track Profiles Container - Side by Side */
+    .track-profiles-container {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+      margin-bottom: 24px;
+    }
+
     /* CTA */
     .srv-cta { background: linear-gradient(135deg, var(--red), #8b1a1e); padding: 72px 24px; text-align: center; }
     .srv-cta h2 { font-family: 'Oswald', sans-serif; font-size: clamp(2rem,4vw,2.8rem); font-weight: 700; color: white; text-transform: uppercase; margin-bottom: 14px; }
@@ -143,11 +149,13 @@
       .spec-grid { grid-template-columns: 1fr 1fr; }
       .type-grid { grid-template-columns: 1fr 1fr; }
       .type-grid-2col { grid-template-columns: 1fr 1fr; }
+      .track-profiles-container { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
       .access-grid { grid-template-columns: 1fr; }
       .spec-grid { grid-template-columns: 1fr; }
       .type-grid, .type-grid-2col { grid-template-columns: 1fr; }
+      .track-profiles-container { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -286,37 +294,40 @@
             <li><span class="fc">✓</span> Full structural load calculations provided</li>
           </ul>
         </div>
-              <div class="type-card reveal reveal-delay-2">
-        <div class="type-card-img">
-          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/H-BEAM_MONORAIL.jpeg" loading="lazy" alt="H-Beam Track" onerror="this.parentElement.innerHTML='🔩'"/>
-          <span class="type-card-badge">Profile Type</span>
-        </div>
-        <div class="type-card-body">
-          <h4>H-Beam Track</h4>
-          <p>Heavy-duty H-beam steel profiles are used for longer-span or high-capacity monorail runs. The wide flange section provides superior rigidity and allows the trolley wheel assembly to run smoothly even on extended track lengths with minimal deflection.</p>
-          <ul class="type-feats">
-            <li><span class="fc">✓</span> High load capacity for long spans</li>
-            <li><span class="fc">✓</span> Minimal deflection under full working load</li>
-            <li><span class="fc">✓</span> Hot-dip galvanised for corrosion resistance</li>
-          </ul>
-        </div>
       </div>
 
-      <div class="type-card reveal reveal-delay-3">
-        <div class="type-card-img">
-          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/MONORAIL_IMAGES_ALUMINIUM_ALLOY_C-130.jpeg" loading="lazy" alt="Aluminium Alloy C-130" onerror="this.parentElement.innerHTML='⚡'"/>
-          <span class="type-card-badge">Profile Type</span>
+      <div class="track-profiles-container">
+        <div class="type-card reveal reveal-delay-2">
+          <div class="type-card-img">
+            <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/H-BEAM_MONORAIL.jpeg" loading="lazy" alt="H-Beam Track" onerror="this.parentElement.innerHTML='🔩'"/>
+            <span class="type-card-badge">Profile Type</span>
+          </div>
+          <div class="type-card-body">
+            <h4>H-Beam Track</h4>
+            <p>Heavy-duty H-beam steel profiles are used for longer-span or high-capacity monorail runs. The wide flange section provides superior rigidity and allows the trolley wheel assembly to run smoothly even on extended track lengths with minimal deflection.</p>
+            <ul class="type-feats">
+              <li><span class="fc">✓</span> High load capacity for long spans</li>
+              <li><span class="fc">✓</span> Minimal deflection under full working load</li>
+              <li><span class="fc">✓</span> Hot-dip galvanised for corrosion resistance</li>
+            </ul>
+          </div>
         </div>
-        <div class="type-card-body">
-          <h4>Aluminium Alloy C-130</h4>
-          <p>The C-130 aluminium alloy extrusion profile provides a lightweight yet strong monorail solution for standard-span applications. Its low self-weight reduces structural loading on the building and allows easier installation, especially on refurbishment projects.</p>
-          <ul class="type-feats">
-            <li><span class="fc">✓</span> Lightweight — reduces structural loading</li>
-            <li><span class="fc">✓</span> Corrosion-resistant aluminium alloy</li>
-            <li><span class="fc">✓</span> Ideal for refurbishment &amp; retrofit projects</li>
-          </ul>
+
+        <div class="type-card reveal reveal-delay-3">
+          <div class="type-card-img">
+            <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/MONORAIL_IMAGES_ALUMINIUM_ALLOY_C-130.jpeg" loading="lazy" alt="Aluminium Alloy C-130" onerror="this.parentElement.innerHTML='⚡'"/>
+            <span class="type-card-badge">Profile Type</span>
+          </div>
+          <div class="type-card-body">
+            <h4>Aluminium Alloy C-130</h4>
+            <p>The C-130 aluminium alloy extrusion profile provides a lightweight yet strong monorail solution for standard-span applications. Its low self-weight reduces structural loading on the building and allows easier installation, especially on refurbishment projects.</p>
+            <ul class="type-feats">
+              <li><span class="fc">✓</span> Lightweight — reduces structural loading</li>
+              <li><span class="fc">✓</span> Corrosion-resistant aluminium alloy</li>
+              <li><span class="fc">✓</span> Ideal for refurbishment &amp; retrofit projects</li>
+            </ul>
+          </div>
         </div>
-      </div>
       </div>
       <div class="type-card reveal reveal-delay-2">
         <div class="type-card-img">

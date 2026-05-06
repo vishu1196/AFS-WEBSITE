@@ -55,36 +55,17 @@
     .spec-val { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--red); }
     .spec-desc { font-size: 0.8rem; color: #9ab8d0; margin-top: 2px; }
 
-    /* ===== IMAGE FIXES — contain images, no zoom/crop ===== */
-    .sblock-image {
-      border-radius: 14px; overflow: hidden; height: 400px;
-      background: linear-gradient(135deg, var(--navy), var(--steel));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 5rem; box-shadow: var(--shadow-md); position: relative;
-    }
-    .sblock-image img {
-      width: 100%; height: 100%;
-      object-fit: contain;        /* ← was cover; now shows full image */
-      object-position: center;
-      background: #f4f6f9;
-    }
+    /* Image side */
+    .sblock-image { border-radius: 14px; overflow: hidden; height: 400px; background: linear-gradient(135deg, var(--navy), var(--steel)); display: flex; align-items: center; justify-content: center; font-size: 5rem; box-shadow: var(--shadow-md); position: relative; }
+    .sblock-image img { width: 100%; height: 100%; object-fit: cover; }
 
     /* Access grid */
     .access-products { max-width: 1200px; margin: 48px auto 0; }
     .access-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     .access-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.28s; }
     .access-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-    .ac-img {
-      height: 180px;
-      background: #f4f6f9;        /* ← light bg so contain images look clean */
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.5rem; overflow: hidden;
-    }
-    .ac-img img {
-      width: 100%; height: 100%;
-      object-fit: contain;        /* ← was cover */
-      object-position: center;
-    }
+    .ac-img { height: 180px; background: linear-gradient(135deg, var(--navy-mid), var(--steel)); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; overflow: hidden; }
+    .ac-img img { width: 100%; height: 100%; object-fit: cover; }
     .ac-body { padding: 18px; }
     .ac-body h4 { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; text-transform: uppercase; color: var(--navy); margin-bottom: 6px; }
     .ac-body p { font-size: 0.84rem; color: var(--muted); line-height: 1.6; margin: 0; }
@@ -101,7 +82,7 @@
     .callout h4 { font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 600; text-transform: uppercase; margin-bottom: 4px; }
     .callout p { font-size: 0.9rem; color: #9ab8d0; line-height: 1.6; }
 
-    /* ===== TYPE CARDS ===== */
+    /* ===== TYPE CARDS — Monorail / Davit / Cleaning / Restoration ===== */
     .type-section { max-width: 1200px; margin: 56px auto 0; padding: 0 0 8px; }
     .type-section-title {
       font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700;
@@ -121,16 +102,11 @@
 
     .type-card-img {
       height: 215px; overflow: hidden; position: relative;
-      background: #f4f6f9;        /* ← light bg for contain images */
+      background: linear-gradient(135deg, var(--navy), var(--steel));
       display: flex; align-items: center; justify-content: center; font-size: 3.5rem;
     }
-    .type-card-img img {
-      width: 100%; height: 100%;
-      object-fit: contain;        /* ← was cover; no more zoom */
-      object-position: center;
-      transition: transform 0.4s ease;
-    }
-    .type-card:hover .type-card-img img { transform: scale(1.03); } /* subtle, not aggressive */
+    .type-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .type-card:hover .type-card-img img { transform: scale(1.05); }
 
     .type-card-badge {
       position: absolute; top: 12px; left: 12px;
@@ -155,7 +131,7 @@
     .type-feats li:last-child { border-bottom: none; }
     .type-feats .fc { color: var(--red); font-weight: 700; flex-shrink: 0; font-size: 0.76rem; margin-top: 2px; }
 
-    /* Track Profiles Container */
+    /* Track Profiles Container - Side by Side */
     .track-profiles-container {
       display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
       margin-bottom: 24px;
@@ -221,7 +197,7 @@
     <a href="#access-solutions" class="srv-tab">🏗️ Access</a>
     <a href="#restoration" class="srv-tab">🔧 Restoration</a>
     <a href="#maintenance" class="srv-tab">🔩 Maintenance</a>
-    <a href="#Brackets" class="srv-tab">🔩 Eye Bolt</a>
+    <a href="#Brackets" class="srv-tab">🔩 Register Brackets</a>
   </div>
 </div>
 
@@ -349,6 +325,7 @@
       </div>
       </div>
 
+      
       <div class="type-card reveal reveal-delay-2">
         <div class="type-card-img">
           <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/safe_anchoring.jpeg" loading="lazy" alt="Safe Anchoring" onerror="this.parentElement.innerHTML='🔗'"/>
@@ -364,6 +341,12 @@
           </ul>
         </div>
       </div>
+
+      </div>
+
+      
+
+
 
     </div>
   </div>
@@ -387,7 +370,8 @@
         <li><span class="feat-check">✓</span> Compact and easy to deploy and relocate</li>
         <li><span class="feat-check">✓</span> Used for cleaning, waterproofing, glass replacement and painting</li>
         <li><span class="feat-check">✓</span> Full supply, installation and commissioning included</li>
-        <li><span class="feat-check">✓</span> Custom sizes available on request</li>
+        <li><span class="feat-check">✓</span> Customization is available in sizes</li>
+          
       </ul>
       <div class="spec-grid">
         <div class="spec-box"><div class="spec-label">Configuration</div><div class="spec-val">Solo</div><div class="spec-desc">One Man Cradle</div></div>
@@ -462,7 +446,7 @@
       <a href="contact.html" class="btn btn-primary">Request a Davit System <span class="arrow">→</span></a>
     </div>
     <div class="sblock-image reveal reveal-delay-2">
-      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Davit_JIB_System.png" loading="lazy" alt="Davit JIB System" onerror="this.parentElement.innerHTML='🔩'"/>
+      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/devit_jib.jpeg" loading="lazy" alt="Davit JIB System" onerror="this.parentElement.innerHTML='🔩'"/>
     </div>
   </div>
 
@@ -701,7 +685,7 @@
         </div>
         <div class="access-card reveal reveal-delay-3">
           <div class="ac-img"><img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/EYEBOLT.jpeg" loading="lazy" alt="Eyebolt" onerror="this.parentElement.innerHTML='🔗'"/></div>
-          <div class="ac-body"><h4>Eyebolt &amp; Anchor Systems</h4><p>Certified anchor eyebolts and aluminium scaffold systems for rope access and lower-level facade work.</p></div>
+          <div class="ac-body"><h4>Eyebolt</h4><p>Certified anchor eyebolts and aluminium scaffold systems for rope access and lower-level facade work.</p></div>
         </div>
       </div>
     </div>
@@ -844,34 +828,32 @@
 </div>
 
 
-<!-- ══ 11. EYE BOLT ══ -->
+<!-- ══ 11. EYE-BOLT ══ -->
 <div class="service-block" id="Brackets">
   <div class="sblock-inner">
     <div class="sblock-text reveal">
       <span class="sblock-num">11</span>
-      <div class="section-eyebrow">Safety Anchor System</div>
-      <h2>Eye <span>Bolt</span></h2>
+      <div class="section-eyebrow">EYE BOLT</div>
+      <h2>EYE <span>BOLT</span></h2>
       <div class="sblock-divider"></div>
-      <p>Eye bolts are certified permanent anchor points installed into the building's structural slab or parapet, providing a secure, code-compliant attachment point for rope access operators, safety lines, and suspended access equipment. Every installation is engineered, load-tested, and certified to ensure maximum safety for at-height work.</p>
-      <p>We supply, install, and certify eye bolt systems for new buildings and retrofits — ensuring your building is fully equipped for safe, compliant facade access at any time.</p>
+      <p>Comprehensive safety and facility management services — from free site surveys and risk assessments to BMU audits and pull-out testing, keeping your building fully compliant with occupational health and safety standards.</p>
       <ul class="feat-list">
-        <li><span class="feat-check">✓</span> Permanent structural anchor points — CE &amp; IS certified</li>
-        <li><span class="feat-check">✓</span> Installed into concrete slab, parapet, or roof structure</li>
-        <li><span class="feat-check">✓</span> Pull-out load tested post-installation with certification</li>
-        <li><span class="feat-check">✓</span> Compatible with rope access, safety harness, and cradle lines</li>
-        <li><span class="feat-check">✓</span> Free site survey to map anchor point layout for full facade coverage</li>
-        <li><span class="feat-check">✓</span> Annual inspection and re-certification service available</li>
+        <li><span class="feat-check">✓</span> Free site survey &amp; consulting for work-at-height needs</li>
+        <li><span class="feat-check">✓</span> Facade access risk assessments &amp; job safety analysis</li>
+        <li><span class="feat-check">✓</span> Occupational health &amp; safety risk mitigation strategies</li>
+        <li><span class="feat-check">✓</span> BMU condition reports &amp; maintenance audit</li>
+        <li><span class="feat-check">✓</span> BMU Audit &amp; Pull-Out Testing</li>
         <li><span class="feat-check">✓</span> Floor Register Brackets — supply, install and certification</li>
-        <li><span class="feat-check">✓</span> Compliant with occupational health &amp; safety at-height regulations</li>
+        <li><span class="feat-check">✓</span> Performance specification &amp; client advice for refurbishment</li>
       </ul>
       <div class="spec-grid">
         <div class="spec-box"><div class="spec-label">Site Survey</div><div class="spec-val">100% Free</div><div class="spec-desc">No obligation assessment</div></div>
         <div class="spec-box"><div class="spec-label">Response</div><div class="spec-val">24 / 7</div><div class="spec-desc">Emergency support available</div></div>
       </div>
-      <a href="contact.html" class="btn btn-primary">Request a Free Eye Bolt Survey <span class="arrow">→</span></a>
+      <a href="contact.html" class="btn btn-primary">Request a Free Safety Survey <span class="arrow">→</span></a>
     </div>
     <div class="sblock-image reveal reveal-delay-2">
-      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/EYEBOLT_2.jpeg" loading="lazy" alt="Eye Bolt Anchor System" onerror="this.parentElement.innerHTML='🦺'"/>
+      <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/EYEBOLT_2.jpeg" loading="lazy" alt="Safety" onerror="this.parentElement.innerHTML='🦺'"/>
     </div>
   </div>
 </div>
@@ -901,7 +883,7 @@
         <li><a href="#spiderman">Spiderman Service</a></li>
         <li><a href="#restoration">Restoration</a></li>
         <li><a href="#maintenance">Maintenance</a></li>
-        <li><a href="#Brackets">Eye Bolt</a></li>
+        <li><a href="#Brackets">Register Brackets</a></li>
       </ul></div>
       <div class="footer-col"><h4>Contact</h4>
         <div class="fci"><span class="ico">📞</span><p><a href="tel:8369803028">8369 803 028</a><br/><a href="tel:9591742073">9591 742 073</a><br/><a href="tel:9619634159">9619 634 159</a></p></div>

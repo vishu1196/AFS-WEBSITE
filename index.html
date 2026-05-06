@@ -123,21 +123,12 @@
       border: 1px solid var(--border); transition: all 0.28s; display: block; color: var(--text);
     }
     .srv-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-
-    /* ── IMAGE FIX: contain instead of cover so nothing gets cropped/zoomed ── */
     .srv-thumb {
-      height: 175px;
-      background: #f0f3f7;          /* ← light neutral bg behind contained images */
+      height: 175px; background: linear-gradient(135deg, var(--navy), var(--steel));
       display: flex; align-items: center; justify-content: center; font-size: 3rem;
       position: relative; overflow: hidden;
     }
-    .srv-thumb img {
-      width: 100%; height: 100%;
-      object-fit: contain;          /* ← was cover; now shows full image, no zoom */
-      object-position: center;
-    }
-    /* ── END IMAGE FIX ── */
-
+    .srv-thumb img { width: 100%; height: 100%; object-fit: cover; }
     .srv-thumb-overlay {
       position: absolute; inset: 0; background: rgba(15,32,68,0.3);
       display: flex; align-items: flex-end; padding: 14px;
@@ -337,9 +328,10 @@
     </div>
     <div class="services-grid">
 
-      <a href="services.html#Twin-track-car-bmu-system" class="srv-card reveal reveal-delay-1">
+
+       <a href="services.html#Twin-track-car-bmu-system" class="srv-card reveal reveal-delay-1">
         <div class="srv-thumb">
-          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/TWIN_TRACK_BMU.jpeg" loading="lazy" alt="Twin Track BMU"/>
+          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/TWIN_TRACK_BMU.jpeg" loading="lazy"/>
           <div class="srv-thumb-overlay"><span class="tag tag-red">View Details →</span></div>
         </div>
         <div class="srv-body">
@@ -349,50 +341,53 @@
         </div>
       </a>
 
+
       <a href="services.html#monorail-system" class="srv-card reveal reveal-delay-1">
         <div class="srv-thumb">
-          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/monorail.jpeg" loading="lazy" alt="Monorail System" onerror="this.parentElement.innerHTML='🪣'"/>
+          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/monorail.jpeg" loading="lazy" alt="Facade Cleaning" onerror="this.parentElement.innerHTML='🪣'"/>
           <div class="srv-thumb-overlay"><span class="tag tag-red">View Details →</span></div>
         </div>
         <div class="srv-body">
-          <h3>Monorail System</h3>
-          <p>Custom overhead track systems tailored to your building profile, delivering smooth motorised horizontal traverse with secure anchoring and full end-to-end support.</p>
+          <h3>Monorail system</h3>
+          <p>Precision track movement ensures smooth and controlled horizontal operation, while custom monorail designs are tailored to suit specific building structures. The system provides enhanced safety access with secure anchoring and safety-focused components, along with end-to-end support including installation, inspection, servicing, and long-term maintenance.</p>
           <div class="srv-link">Learn More <span>→</span></div>
         </div>
       </a>
 
       <a href="services.html#Power-suspended-platforms" class="srv-card reveal reveal-delay-1">
         <div class="srv-thumb">
-          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/cradle.png" loading="lazy" alt="Power Suspended Platforms" onerror="this.parentElement.innerHTML='🪣'"/>
+          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/cradle.png" loading="lazy" alt="Facade Cleaning" onerror="this.parentElement.innerHTML='🪣'"/>
           <div class="srv-thumb-overlay"><span class="tag tag-red">View Details →</span></div>
         </div>
         <div class="srv-body">
           <h3>Power Suspended Platforms</h3>
-          <p>Electrically powered motorised cradles in solo and two-man configurations, with fail-safe braking and overload protection for safe facade access at any height.</p>
+          <p>Precision track movement ensures smooth and controlled horizontal operation, while custom monorail designs are tailored to suit specific building structures. The system provides enhanced safety access with secure anchoring and safety-focused components, along with end-to-end support including installation, inspection, servicing, and long-term maintenance.</p>
           <div class="srv-link">Learn More <span>→</span></div>
         </div>
       </a>
 
-      <a href="services.html#aerial-work-platform" class="srv-card reveal reveal-delay-1">
+      <a href="services.html#aerial-work-platform & AI scaffold" class="srv-card reveal reveal-delay-1">
         <div class="srv-thumb">
-          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Scaffolding.png" loading="lazy" alt="Aerial Work Platform" onerror="this.parentElement.innerHTML='🪣'"/>
+          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Scaffolding.png" loading="lazy" alt="Facade Cleaning" onerror="this.parentElement.innerHTML='🪣'"/>
           <div class="srv-thumb-overlay"><span class="tag tag-red">View Details →</span></div>
         </div>
         <div class="srv-body">
-          <h3>Aerial Work Platform</h3>
-          <p>Aerial work platforms provide safe and flexible elevated access for maintenance and installation tasks, ensuring ease of movement and efficient operation at height.</p>
+          <h3>aerial work platform</h3>
+          <p>Aerial work platforms provide safe and flexible elevated access for maintenance and installation tasks, ensuring ease of movement and efficient operation at height</p>
           <div class="srv-link">Learn More <span>→</span></div>
         </div>
       </a>
 
+
+
       <a href="services.html#Davit-JIB-System" class="srv-card reveal reveal-delay-1">
         <div class="srv-thumb">
-          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/devit_jib.jpeg" loading="lazy" alt="Davit JIB System" onerror="this.parentElement.innerHTML='🪣'"/>
+          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/devit_jib.jpeg" loading="lazy" alt="Facade Cleaning" onerror="this.parentElement.innerHTML='🪣'"/>
           <div class="srv-thumb-overlay"><span class="tag tag-red">View Details →</span></div>
         </div>
         <div class="srv-body">
           <h3>Davit JIB System</h3>
-          <p>Floor-mounted davit jib systems with secure structural anchoring, 360° rotation, and motorised or manual variants — fully installed, load tested and certified.</p>
+          <p>Floor mounted davit jib systems provide secure and flexible facade access with strong base support and easy operation. Designed to suit building requirements, they ensure safe handling, smooth functionality, and complete support including installation, inspection, and maintenance.</p>
           <div class="srv-link">Learn More <span>→</span></div>
         </div>
       </a>
@@ -404,19 +399,19 @@
         </div>
         <div class="srv-body">
           <h3>Facade Cleaning</h3>
-          <p>We undertake facade cleaning contracts for high-performance buildings with glass facades or structural glazing, using water soaking, jet washing, chemical and steam methods.</p>
+          <p> Facade Cleaning We undertake facade cleaning contracts for high-performance buildings with glass facades or structural glazing.</p>
           <div class="srv-link">Learn More <span>→</span></div>
         </div>
       </a>
 
       <a href="services.html#spiderman" class="srv-card reveal reveal-delay-2">
         <div class="srv-thumb">
-          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Spiderman_Service.jpeg" loading="lazy" alt="Spiderman Service" onerror="this.parentElement.innerHTML='🧗'"/>
+          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Spiderman_Service.jpeg" loading="lazy" alt="Spiderman" onerror="this.parentElement.innerHTML='🧗'"/>
           <div class="srv-thumb-overlay"><span class="tag tag-red">View Details →</span></div>
         </div>
         <div class="srv-body">
           <h3>Spiderman Service</h3>
-          <p>Rope access solutions — low cost, fail-safe, one-man operable with imported certified equipment from UK &amp; France and parachute-grade Kermantle ropes.</p>
+          <p>Rope access solutions — low cost, fail-safe, one-man operable with imported certified equipment.</p>
           <div class="srv-link">Learn More <span>→</span></div>
         </div>
       </a>
@@ -428,48 +423,44 @@
         </div>
         <div class="srv-body">
           <h3>Access Solutions</h3>
-          <p>BMU trolleys, cradles, davit systems, monorails, parapet jibs, scaffolding and more — supplied, installed and maintained to full certification standards.</p>
+          <p>BMU trolleys, cradles, davit systems, monorails, parapet jibs, scaffolding and more.</p>
           <div class="srv-link">Learn More <span>→</span></div>
         </div>
       </a>
-
       <a href="services.html#restoration" class="srv-card reveal reveal-delay-1">
         <div class="srv-thumb">
-          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/restoration.jpeg" loading="lazy" alt="Facade Restoration" onerror="this.parentElement.innerHTML='🔧'"/>
+          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/restoration.jpeg" loading="lazy" alt="Restoration" onerror="this.parentElement.innerHTML='🔧'"/>
           <div class="srv-thumb-overlay"><span class="tag tag-red">View Details →</span></div>
         </div>
         <div class="srv-body">
           <h3>Facade Restoration</h3>
-          <p>Leakage testing, silicone waterproofing, glass unit replacement and stone cladding repair — restoring your building's exterior and long-term structural integrity.</p>
+          <p>Leakage testing, silicon waterproofing, glass unit replacement and stone cladding.</p>
           <div class="srv-link">Learn More <span>→</span></div>
         </div>
       </a>
-
       <a href="services.html#maintenance" class="srv-card reveal reveal-delay-2">
         <div class="srv-thumb">
-          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/BMU_Maintenaince.jpeg" loading="lazy" alt="Facade Maintenance" onerror="this.parentElement.innerHTML='🔩'"/>
+          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/BMU_Maintenaince.jpeg" loading="lazy" alt="Maintenance" onerror="this.parentElement.innerHTML='🔩'"/>
           <div class="srv-thumb-overlay"><span class="tag tag-red">View Details →</span></div>
         </div>
         <div class="srv-body">
           <h3>Facade Maintenance</h3>
-          <p>Annual BMU maintenance contracts with monthly visits for inspection, testing and commissioning — plus 24/7 emergency call-out support.</p>
+          <p>Annual BMU maintenance contracts with monthly visits for inspection, testing and commissioning.</p>
           <div class="srv-link">Learn More <span>→</span></div>
         </div>
       </a>
-
+      
       <a href="services.html#Brackets" class="srv-card reveal reveal-delay-3">
         <div class="srv-thumb">
-          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Brackets.jpeg" loading="lazy" alt="Eye Bolt" onerror="this.parentElement.innerHTML='🦺'"/>
+          <img src="https://raw.githubusercontent.com/vishu1196/AFS-WEBSITE/main/static/Brackets.jpeg" loading="lazy" alt="Brackets" onerror="this.parentElement.innerHTML='🦺'"/>
           <div class="srv-thumb-overlay"><span class="tag tag-red">View Details →</span></div>
         </div>
         <div class="srv-body">
-          <h3>Eye Bolt</h3>
-          <!-- ── UPDATED EYEBOLT DESCRIPTION ── -->
-          <p>Certified permanent anchor points installed into the building's structural slab or parapet, load-tested and compliant with at-height safety regulations — supply, installation and annual re-certification included.</p>
+          <h3>EYE BOLT</h3>
+          <p>Site surveys, risk assessments, BMU audits, pull-out testing and safety compliance.</p>
           <div class="srv-link">Learn More <span>→</span></div>
         </div>
       </a>
-
     </div>
     <div class="text-center" style="margin-top:36px;">
       <a href="services.html" class="btn btn-outline-red">See All Services <span class="arrow">→</span></a>
@@ -561,17 +552,17 @@
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="services.html#Facade-cleaning">Facade Cleaning</a></li>
+          <li><a href="services.html#facade-cleaning">Facade Cleaning</a></li>
           <li><a href="services.html#spiderman">Spiderman Service</a></li>
           <li><a href="services.html#access-solutions">Access Solutions</a></li>
           <li><a href="services.html#restoration">Restoration</a></li>
           <li><a href="services.html#maintenance">BMU Maintenance</a></li>
-          <li><a href="services.html#Brackets">Eye Bolt</a></li>
+          <li><a href="services.html#safety">Safety & Facility Mgmt</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact Us</h4>
-        <div class="fci"><span class="ico">📞</span><p><a href="tel:8369803028">8369 803 028</a><br/><a href="tel:9591742073">9591 742 073</a><br/><a href="tel:9619634159">9619 634 159</a></p></div>
+        <div class="fci"><span class="ico">📞</span><p><a href="tel:8369803028">8369 803 028</a><br/><a href="tel:9591742073">9591 742 073</a><br/><a href="tel:9619634159">9619 634 159 </a></p></div>
         <div class="fci"><span class="ico">✉️</span><p><a href="mailto:activefacadesales@gmail.com">activefacadesales@gmail.com</a></p></div>
         <div class="fci"><span class="ico">📍</span><p>Shop No.4, Sushma Apartment,<br/>Plot E 88, Sector-3, Kharghar,<br/>Navi Mumbai – 410 210</p></div>
       </div>
